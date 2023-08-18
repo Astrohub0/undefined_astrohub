@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
                     iconwidget: Transform.rotate(
                       angle: 2.45, //for arrival 3.5
                       child: Container(
-                        margin: const EdgeInsets.only(top: 10.0, right: 10.0),
+                        margin: const EdgeInsets.only(top: 15.0, left: 5.0),
                         child: const Icon(
                           Icons.arrow_back_rounded,
                           color: Colors.white,
@@ -66,7 +66,7 @@ class _HomeState extends State<Home> {
                     iconwidget: Transform.rotate(
                       angle: 3.5, //for arrival 3.5
                       child: Container(
-                        margin: const EdgeInsets.only(top: 10.0, right: 10.0),
+                        margin: const EdgeInsets.only(bottom: 10.0, left: 5.0),
                         child: const Icon(
                           Icons.arrow_back_rounded,
                           color: Colors.white,
