@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>227612603597-p7cc9r9v9h0ehuf1pi5oig5jdvhao0h1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.227612603597-p7cc9r9v9h0ehuf1pi5oig5jdvhao0h1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBBWAKPyCBtkI9_wh-wjbOZ-G1abWRYcHs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>227612603597</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.astroHub</string>
+	<key>PROJECT_ID</key>
+	<string>astrohub-3b138</string>
+	<key>STORAGE_BUCKET</key>
+	<string>astrohub-3b138.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:227612603597:ios:b85826734c11eed5802584</string>
+</dict>
+</plist>
