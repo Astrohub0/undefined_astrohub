@@ -8,6 +8,12 @@ class AppStyles {
 class TextStyles {
   //global text variants
 
+  static const TextStyle bodyText = TextStyle(
+    color: Colors.white,
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+  );
+
   static TextStyle subtopicText = TextStyle(
     color: Colors.white.withOpacity(0.6),
     fontSize: 17,
@@ -84,5 +90,17 @@ class AppGradients {
     begin: Alignment(0.65, -0.76),
     end: Alignment(-0.65, 0.76),
     colors: [Color(0xFF030418), Color(0xFF03132C)],
+  );
+
+  static const LinearGradient glassInputGradient = LinearGradient(
+    begin: Alignment.bottomCenter,
+    end: Alignment.topCenter,
+    colors: [Color(0x4C4C4C4C), Color(0x0C181818)],
+  );
+
+  static const glassBoxGradient = LinearGradient(
+    begin: Alignment.bottomCenter,
+    end: Alignment.topCenter,
+    colors: [Color.fromRGBO(77, 77, 77, 0.3), Color.fromRGBO(24, 24, 24, 0.05)],
   );
 }
