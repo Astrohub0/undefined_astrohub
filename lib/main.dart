@@ -1,7 +1,9 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/widgets/global/book_btn.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/common_search.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,24 +59,18 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return SafeArea(
-      child: Scaffold(
-        appBar: CommonAppBar(title: 'Astrohub'),
-        body: Container(
-            constraints: BoxConstraints.expand(),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/bg.png"),
-                fit: BoxFit.cover,
-              ),
+        child: Scaffold(
+      appBar: CommonAppBar(title: 'Astrohub'),
+      body: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/bg.png"),
+              fit: BoxFit.cover,
             ),
-            child: Container()),
-
-        floatingActionButton: FloatingActionButton(
-          onPressed: _incrementCounter,
-          tooltip: 'Increment',
-          child: const Icon(Icons.add),
-        ), // This trailing comma makes auto-formatting nicer for build methods.
-      ),
-    );
+          ),
+          child: Container()),
+      floatingActionButton: bookFlight(),
+    ));
   }
 }
