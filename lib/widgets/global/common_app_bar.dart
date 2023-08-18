@@ -17,7 +17,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.only(
         // top: MediaQuery.of(context).padding.top,
         top: 20,
-        left: 45,
+        left: 35,
         right: 45,
       ),
       child: AppBar(

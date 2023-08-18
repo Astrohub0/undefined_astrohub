@@ -1,9 +1,10 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/models/enums/craftType.dart';
+import 'package:astro_hub/screens/initialization_screens/home.dart';
 import 'package:astro_hub/widgets/global/book_btn.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
-import 'package:astro_hub/widgets/global/common_search.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:glassmorphism/glassmorphism.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Astrohub',
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xFF030C29),
+        // primaryColor: const Color.fromARGB(142, 233, 30, 98),
+        // canvasColor: Color.fromARGB(255, 30, 233, 142),
+        // cardColor: Color.fromARGB(255, 0, 166, 255),
+        // dialogBackgroundColor: Color.fromARGB(142, 255, 200, 0),
+        scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: const AppBarTheme(
           color: Colors.transparent,
         ),
@@ -42,35 +47,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return SafeArea(
-        child: Scaffold(
-      appBar: CommonAppBar(title: 'Astrohub'),
-      body: Container(
-          constraints: BoxConstraints.expand(),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/bg.png"),
-              fit: BoxFit.cover,
-            ),
+    return Stack(
+      children: [
+        Positioned.fill(
+          //
+          child: Image(
+            image: AssetImage("assets/images/bg.png"),
+            fit: BoxFit.fill,
+            width: double.infinity,
           ),
-          child: Container()),
-      floatingActionButton: bookFlight(),
-    ));
+        ),
+        Home(),
+        // Container(
+        //     constraints: BoxConstraints.expand(),
+        //     width: double.infinity,
+        //     decoration: const BoxDecoration(
+        //       image: DecorationImage(
+        //         image: AssetImage("assets/images/bg.png"),
+        //         fit: BoxFit.cover,
+        //       ),
+        //     ),
+        //     child: Home()),
+      ],
+    );
   }
 }

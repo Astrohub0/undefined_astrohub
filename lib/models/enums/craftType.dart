@@ -1,0 +1,4 @@
+enum CraftType {
+  cruise,
+  shuttle,
+}

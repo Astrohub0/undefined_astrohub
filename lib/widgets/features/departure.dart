@@ -32,20 +32,13 @@ Widget departure(BuildContext context,
       ],
     ),
     borderRadius: 16.0,
-    linearGradient: const LinearGradient(
-      begin: Alignment(0.59, 0.80),
-      end: Alignment(-0.59, -0.8),
-      colors: [
-        Color.fromRGBO(255, 255, 255, 0.05),
-        Color.fromRGBO(255, 255, 255, 0.05)
-      ],
-    ),
+    linearGradient: AppGradients.glassBoxGradient,
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 15.0, left: 5.0),
-          child: Image.asset('assets/planetIcon.png', width: 50),
+          child: Image.asset('assets/images/planetIcon.png', width: 50),
         ),
         const SizedBox(width: 10),
         Column(
