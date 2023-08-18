@@ -1,6 +1,7 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/enums/craftType.dart';
 import 'package:astro_hub/screens/initialization_screens/home.dart';
+import 'package:astro_hub/screens/test.dart';
 import 'package:astro_hub/widgets/global/book_btn.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Astrohub',
+      title: 'AstroHub',
       theme: ThemeData(
         // primaryColor: const Color.fromARGB(142, 233, 30, 98),
         // canvasColor: Color.fromARGB(255, 30, 233, 142),
@@ -59,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
           ),
         ),
-        Home(),
+        Test(),
         // Container(
         //     constraints: BoxConstraints.expand(),
         //     width: double.infinity,
