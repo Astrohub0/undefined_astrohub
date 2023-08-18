@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
                       child: Text('Departure Date Range',
                           style: TextStyles.subtopicText)),
                 ),
-                departureDatePick(context),
+                DepartureDatePick(),
                 Padding(
                   padding: const EdgeInsets.only(left: 30.0),
                   child: Align(
@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
                       child: Text('Arrival Date Range',
                           style: TextStyles.subtopicText)),
                 ),
-                departureDatePick(context),
+                DepartureDatePick(),
                 Container(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -139,14 +139,15 @@ class _HomeState extends State<Home> {
                                 onChanged: (String? value) {
                                   if (value != null) {
                                     _onShuttleDropdownChanged(CraftType.values
-                                        .firstWhere(
-                                            (type) => type.toString() == value));
+                                        .firstWhere((type) =>
+                                            type.toString() == value));
                                   }
                                 },
                                 items: CraftType.values.map((CraftType value) {
                                   return DropdownMenuItem<String>(
                                     value: value.toString(),
-                                    child: Text(value.toString().split('.').last),
+                                    child:
+                                        Text(value.toString().split('.').last),
                                   );
                                 }).toList(),
                               ),
@@ -201,14 +202,16 @@ class _HomeState extends State<Home> {
                                   onChanged: (String? value) {
                                     if (value != null) {
                                       _onCabinDropdownChanged(CabinType.values
-                                          .firstWhere(
-                                              (type) => type.toString() == value));
+                                          .firstWhere((type) =>
+                                              type.toString() == value));
                                     }
                                   },
-                                  items: CabinType.values.map((CabinType value) {
+                                  items:
+                                      CabinType.values.map((CabinType value) {
                                     return DropdownMenuItem<String>(
                                       value: value.toString(),
-                                      child: Text(value.toString().split('.').last),
+                                      child: Text(
+                                          value.toString().split('.').last),
                                     );
                                   }).toList(),
                                 ),
@@ -221,7 +224,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
