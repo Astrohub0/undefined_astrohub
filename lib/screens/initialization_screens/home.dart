@@ -6,7 +6,6 @@ import 'package:astro_hub/widgets/features/departureDate.dart';
 import 'package:astro_hub/widgets/global/book_btn.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/common_number_input.dart';
-import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
@@ -91,132 +90,138 @@ class _HomeState extends State<Home> {
                           style: TextStyles.subtopicText)),
                 ),
                 departureDatePick(context),
-                Row(
-                  children: [
-                    //shuttle drop down
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Shuttle Type',
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.6),
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        GlassmorphicContainer(
-                          width: width * 0.3,
-                          height: height * 0.06,
-                          borderRadius: 8.0,
-                          linearGradient: AppGradients.glassInputGradient,
-                          border: 0.5,
-                          blur: 50,
-                          borderGradient: const LinearGradient(
-                            begin: Alignment(0.59, 0.80),
-                            end: Alignment(-0.59, -0.8),
-                            colors: [
-                              Color(0x4AFFFFFF),
-                              Color(0x0AFFFFFF),
-                            ],
-                          ),
-                          child: Container(
-                            // Wrap DropdownButton with Container
-                            width: width * 0.3,
-                            height: height * 0.06,
-                            child: DropdownButton<String>(
-                              dropdownColor: Color(0xFF31A27),
-                              padding: EdgeInsets.only(left: 20),
-                              underline: Container(), // Remove underline
-                              style: TextStyle(
-                                color: Colors.white.withOpacity(0.6),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700,
-                              ),
-                              value: selectedCraftType.toString(),
-                              onChanged: (String? value) {
-                                if (value != null) {
-                                  _onShuttleDropdownChanged(CraftType.values
-                                      .firstWhere(
-                                          (type) => type.toString() == value));
-                                }
-                              },
-                              items: CraftType.values.map((CraftType value) {
-                                return DropdownMenuItem<String>(
-                                  value: value.toString(),
-                                  child: Text(value.toString().split('.').last),
-                                );
-                              }).toList(),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      //shuttle drop down
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Shuttle Type',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.6),
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-
-                    //cabin type dropdown
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Cabin Type',
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.6),
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        GlassmorphicContainer(
-                          width: width * 0.3,
-                          height: height * 0.06,
-                          borderRadius: 8.0,
-                          linearGradient: AppGradients.glassInputGradient,
-                          border: 0.5,
-                          blur: 50,
-                          borderGradient: const LinearGradient(
-                            begin: Alignment(0.59, 0.80),
-                            end: Alignment(-0.59, -0.8),
-                            colors: [
-                              Color(0x4AFFFFFF),
-                              Color(0x0AFFFFFF),
-                            ],
-                          ),
-                          child: Container(
-                            // Wrap DropdownButton with Container
+                          const SizedBox(height: 10),
+                          GlassmorphicContainer(
                             width: width * 0.3,
                             height: height * 0.06,
-                            child: DropdownButton<String>(
-                              dropdownColor: Color(0xFF31A27),
-                              padding: EdgeInsets.only(left: 20),
-                              underline: Container(), // Remove underline
-                              style: TextStyle(
-                                color: Colors.white.withOpacity(0.6),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700,
+                            borderRadius: 8.0,
+                            linearGradient: AppGradients.glassInputGradient,
+                            border: 0.5,
+                            blur: 50,
+                            borderGradient: const LinearGradient(
+                              begin: Alignment(0.59, 0.80),
+                              end: Alignment(-0.59, -0.8),
+                              colors: [
+                                Color(0x4AFFFFFF),
+                                Color(0x0AFFFFFF),
+                              ],
+                            ),
+                            child: Container(
+                              // Wrap DropdownButton with Container
+                              width: width * 0.3,
+                              height: height * 0.06,
+                              child: DropdownButton<String>(
+                                dropdownColor: const Color(0xFF31A27),
+                                padding: const EdgeInsets.only(left: 20),
+                                underline: Container(), // Remove underline
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.6),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                                value: selectedCraftType.toString(),
+                                onChanged: (String? value) {
+                                  if (value != null) {
+                                    _onShuttleDropdownChanged(CraftType.values
+                                        .firstWhere(
+                                            (type) => type.toString() == value));
+                                  }
+                                },
+                                items: CraftType.values.map((CraftType value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value.toString(),
+                                    child: Text(value.toString().split('.').last),
+                                  );
+                                }).toList(),
                               ),
-                              value: selectedCabinType.toString(),
-                              onChanged: (String? value) {
-                                if (value != null) {
-                                  _onCabinDropdownChanged(CabinType.values
-                                      .firstWhere(
-                                          (type) => type.toString() == value));
-                                }
-                              },
-                              items: CabinType.values.map((CabinType value) {
-                                return DropdownMenuItem<String>(
-                                  value: value.toString(),
-                                  child: Text(value.toString().split('.').last),
-                                );
-                              }).toList(),
                             ),
                           ),
+                        ],
+                      ),
+                      SizedBox(width: width * 0.06),
+                      //cabin type dropdown
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Cabin Type',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.6),
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            GlassmorphicContainer(
+                              width: width * 0.3,
+                              height: height * 0.06,
+                              borderRadius: 8.0,
+                              linearGradient: AppGradients.glassInputGradient,
+                              border: 0.5,
+                              blur: 50,
+                              borderGradient: const LinearGradient(
+                                begin: Alignment(0.59, 0.80),
+                                end: Alignment(-0.59, -0.8),
+                                colors: [
+                                  Color(0x4AFFFFFF),
+                                  Color(0x0AFFFFFF),
+                                ],
+                              ),
+                              child: Container(
+                                // Wrap DropdownButton with Container
+                                width: width * 0.3,
+                                height: height * 0.06,
+                                child: DropdownButton<String>(
+                                  dropdownColor: Color(0xFF31A27),
+                                  padding: EdgeInsets.only(left: 20),
+                                  underline: Container(), // Remove underline
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.6),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                  value: selectedCabinType.toString(),
+                                  onChanged: (String? value) {
+                                    if (value != null) {
+                                      _onCabinDropdownChanged(CabinType.values
+                                          .firstWhere(
+                                              (type) => type.toString() == value));
+                                    }
+                                  },
+                                  items: CabinType.values.map((CabinType value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value.toString(),
+                                      child: Text(value.toString().split('.').last),
+                                    );
+                                  }).toList(),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
                 Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -229,7 +234,7 @@ class _HomeState extends State<Home> {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         GlassmorphicContainer(
                           width: width * 0.25,
                           height: height * 0.05,
@@ -265,6 +270,7 @@ class _HomeState extends State<Home> {
                         ),
                       ],
                     ),
+                    SizedBox(width: width * 0.06),
                     numberInput(width * 0.25, height * 0.05, 'Passengers'),
                   ],
                 ),
