@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "227612603597",
+    "project_id": "astrohub-3b138",
+    "storage_bucket": "astrohub-3b138.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227612603597:android:247e07f4e51d38df802584",
+        "android_client_info": {
+          "package_name": "com.example.astro_hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227612603597-gcptgbd4muagn4kgcjqom6r25hf7v4h5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpLmAVNW7j02wMY7vDOPDQ45diAVvqCCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227612603597-gcptgbd4muagn4kgcjqom6r25hf7v4h5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "227612603597-oqn6o2hr5t2cjtoud6snucljqv52gpke.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.astroHub.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
