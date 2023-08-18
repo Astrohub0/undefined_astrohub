@@ -6,6 +6,9 @@ import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
+import 'constants/imagePaths.dart' as images;
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -54,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Positioned.fill(
           //
           child: Image(
-            image: AssetImage("assets/images/bg.png"),
+            image: AssetImage(images.bgImage),
             fit: BoxFit.fill,
             width: double.infinity,
           ),
@@ -65,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
         //     width: double.infinity,
         //     decoration: const BoxDecoration(
         //       image: DecorationImage(
-        //         image: AssetImage("assets/images/bg.png"),
+        //         image: AssetImage(images.bgImage),
         //         fit: BoxFit.cover,
         //       ),
         //     ),

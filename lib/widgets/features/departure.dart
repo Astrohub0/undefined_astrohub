@@ -2,6 +2,8 @@ import 'package:astro_hub/constants/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
+import '../../constants/imagePaths.dart' as images;
+
 Widget departure(BuildContext context,
     {required String title,
     required String subtitle,
@@ -38,7 +40,7 @@ Widget departure(BuildContext context,
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 15.0, left: 5.0),
-          child: Image.asset('assets/images/planetIcon.png', width: 50),
+          child: Image.asset(images.planetIcon, width: 50),
         ),
         const SizedBox(width: 10),
         Column(
