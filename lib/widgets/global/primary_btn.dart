@@ -1,11 +1,20 @@
+import 'package:astro_hub/screens/home.dart';
+import 'package:astro_hub/screens/landing.dart';
+import 'package:astro_hub/utils/router.dart';
 import 'package:flutter/material.dart';
 
-Widget primaryButton(BuildContext context, String text) {
+Widget primaryButton(BuildContext context, String text, {Function? onPressed}) {
   final height = MediaQuery.of(context).size.height;
   final width = MediaQuery.of(context).size.width;
 
   return GestureDetector(
-    onTap: (() {}),
+    onTap: (() {
+      if (onPressed != null) {
+        onPressed();
+      } else {
+        PageNavigator(context: context).nextPage(const Landing());
+      }
+    }),
     child: Container(
       width: width * 0.75,
       height: height * 0.05,

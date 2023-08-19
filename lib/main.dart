@@ -1,5 +1,7 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/screens/landing.dart';
 import 'package:astro_hub/screens/search_results.dart';
+import 'package:astro_hub/screens/service_details.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -56,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
           ),
         ),
-        
+        Landing(),
       ],
     );
   }
