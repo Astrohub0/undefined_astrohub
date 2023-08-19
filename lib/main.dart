@@ -1,5 +1,5 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/screens/book_round_trip.dart';
+import 'package:astro_hub/screens/search_results.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Astrohub',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.transparent,
+        // 0xFF4CFF5E
+        scaffoldBackgroundColor: Color(
+          0xFF03132C,
+        ),
         appBarTheme: const AppBarTheme(
           color: Colors.transparent,
         ),
@@ -53,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
           ),
         ),
-        BookRoundTrip()
+        
       ],
     );
   }

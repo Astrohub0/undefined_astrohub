@@ -1,5 +1,5 @@
 enum CabinType {
-  economy,
-  business,
-  firstClass,
+  Economy,
+  Business,
+  FirstClass,
 }
