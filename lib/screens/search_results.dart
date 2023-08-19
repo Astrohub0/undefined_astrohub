@@ -31,7 +31,8 @@ class SearchResultsState extends State<SearchResults> {
 
     return Scaffold(
       appBar: const CommonAppBar(title: 'RESULTS', isBackButton: true),
-      body: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+      body:
+        Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         GlassmorphicContainer(
             width: width * 0.8,
             height: 80,
