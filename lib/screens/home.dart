@@ -270,7 +270,7 @@ class HomeState extends State<Home> {
                 ),
               ]),
         ),
-        floatingActionButton: bookFlight(),
+        floatingActionButton: bookFlight(context),
       ),
     );
   }
