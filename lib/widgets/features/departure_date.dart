@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
 class DepartureDatePick extends StatefulWidget {
+  const DepartureDatePick({super.key});
+
   @override
-  _DepartureDatePickState createState() => _DepartureDatePickState();
+  DepartureDatePickState createState() => DepartureDatePickState();
 }
 
-class _DepartureDatePickState extends State<DepartureDatePick> {
+class DepartureDatePickState extends State<DepartureDatePick> {
   DateTime? fromDate;
   DateTime? toDate;
 
@@ -61,7 +63,7 @@ class _DepartureDatePickState extends State<DepartureDatePick> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(width: 5),
+          const SizedBox(width: 5),
           Text(
             fromDate != null
                 ? 'From: ${fromDate!.day}/${fromDate!.month}/${fromDate!.year}'
@@ -72,7 +74,7 @@ class _DepartureDatePickState extends State<DepartureDatePick> {
               fontWeight: FontWeight.w400,
             ),
           ),
-          SizedBox(width: 5),
+          const SizedBox(width: 5),
           Text(
             toDate != null
                 ? 'To: ${toDate!.day}/${toDate!.month}/${toDate!.year}'
@@ -83,7 +85,7 @@ class _DepartureDatePickState extends State<DepartureDatePick> {
               fontWeight: FontWeight.w400,
             ),
           ),
-          SizedBox(width: 5),
+          const SizedBox(width: 5),
           IconButton(
             onPressed: () => _selectDateRange(context),
             icon: Icon(
@@ -91,7 +93,7 @@ class _DepartureDatePickState extends State<DepartureDatePick> {
               color: Colors.white.withOpacity(0.60),
             ),
           ),
-          SizedBox(width: 5)
+          const SizedBox(width: 5)
         ],
       ),
     );
