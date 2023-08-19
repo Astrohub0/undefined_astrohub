@@ -33,7 +33,7 @@ class SearchResultsState extends State<SearchResults> {
       appBar: const CommonAppBar(title: 'RESULTS', isBackButton: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-        child: ListView( children: [
+        child: ListView(children: [
           GlassmorphicContainer(
               width: width * 0.8,
               height: 80,
