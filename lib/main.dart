@@ -1,8 +1,5 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/models/enums/craft_type.dart';
-import 'package:astro_hub/screens/initialization_screens/home.dart';
-import 'package:astro_hub/widgets/global/book_btn.dart';
-import 'package:astro_hub/widgets/global/common_app_bar.dart';
+import 'package:astro_hub/screens/book_round_trip.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,6 +1,6 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/models/enums/craftType.dart';
-import 'package:astro_hub/models/enums/shuttleType.dart';
+import 'package:astro_hub/models/enums/craft_type.dart';
+import 'package:astro_hub/models/enums/shuttle_type.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
 import 'package:astro_hub/widgets/features/departure_date.dart';
 import 'package:astro_hub/widgets/global/book_btn.dart';
@@ -80,7 +80,7 @@ class HomeState extends State<Home> {
                       child: Text('Departure Date Range',
                           style: TextStyles.subtopicText)),
                 ),
-                DepartureDatePick(),
+                const DepartureDatePick(),
                 Padding(
                   padding: const EdgeInsets.only(left: 30.0),
                   child: Align(
@@ -88,7 +88,7 @@ class HomeState extends State<Home> {
                       child: Text('Arrival Date Range',
                           style: TextStyles.subtopicText)),
                 ),
-                DepartureDatePick(),
+                const DepartureDatePick(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

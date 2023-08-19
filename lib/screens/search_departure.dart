@@ -15,7 +15,7 @@ class SearchDepartureState extends State<SearchDeparture> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: CommonAppBar(title: 'Select Port', isBackButton: true ),
+        appBar: const CommonAppBar(title: 'Select Port', isBackButton: true ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
