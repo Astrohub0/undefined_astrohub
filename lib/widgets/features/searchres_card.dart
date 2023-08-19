@@ -57,7 +57,7 @@ Widget searchResult(
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset('assets/miniearth.png', width: 60),
+                    Image.asset('assets/images/miniearth.png', width: 60),
                     Text(
                       planet1['name'],
                       style: const TextStyle(
@@ -101,7 +101,7 @@ Widget searchResult(
                     color: AppColors.primarySolid01,
                   ),
                 ),
-                Image.asset('assets/minirocket.png', width: 50),
+                Image.asset('assets/images/minirocket.png', width: 50),
                 Container(
                   padding: const EdgeInsets.only(top: 15),
                   width: width * 0.18,
@@ -158,9 +158,9 @@ Widget searchResult(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     //for now I hard coded this cz not sure if we can implement this in backend
-                    companyLabel('NASA', 'assets/nasalogo.png'),
-                    companyLabel('GALAXY', 'assets/galaxylogo.png'),
-                    companyLabel('STARFLEET', 'assets/spacelogo.png'),
+                    companyLabel('NASA', 'assets/images/nasalogo.png'),
+                    companyLabel('GALAXY', 'assets/images/galaxylogo.png'),
+                    companyLabel('STARFLEET', 'assets/images/spacelogo.png'),
                   ],
                 ),
                 Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
