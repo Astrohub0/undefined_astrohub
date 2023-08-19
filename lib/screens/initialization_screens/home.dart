@@ -1,6 +1,6 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/models/enums/craftType.dart';
-import 'package:astro_hub/models/enums/shuttleType.dart';
+import 'package:astro_hub/models/enums/craft_type.dart';
+import 'package:astro_hub/models/enums/shuttle_type.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
 import 'package:astro_hub/widgets/features/departureDate.dart';
 import 'package:astro_hub/widgets/global/book_btn.dart';
