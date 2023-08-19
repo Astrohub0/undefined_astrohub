@@ -7,6 +7,8 @@ class NoAvailableCrafts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: Scaffold(
         appBar: CommonAppBar(
@@ -39,7 +41,7 @@ class NoAvailableCrafts extends StatelessWidget {
               ),
               // add a sized box
               SizedBox(
-                height: 30,
+                height: height* 0.05
               ),
               // button
               primaryButton(
