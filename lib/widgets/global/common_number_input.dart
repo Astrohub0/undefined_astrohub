@@ -15,7 +15,7 @@ Widget numberInput(width, height, String label) {
           fontWeight: FontWeight.w500,
         ),
       ),
-      SizedBox(height: 10),
+      const SizedBox(height: 10),
       GlassmorphicContainer(
         width: width, //width * 0.25,
         height: height, //height * 0.05

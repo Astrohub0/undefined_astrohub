@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Error_Page extends StatelessWidget {
-  const Error_Page({Key? key}) : super(key: key);
+class ErrorPage extends StatelessWidget {
+  const ErrorPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +22,10 @@ class Error_Page extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20,),
-              IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 40,),),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20,30,10,10),
+              const SizedBox(height: 20,),
+              IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_back_ios, color: Colors.white, size: 40,),),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(20,30,10,10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -36,16 +36,16 @@ class Error_Page extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Expanded(
                   child: Container(
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 0,horizontal: 40),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 40),
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(topRight: Radius.circular(50),),
                     ),
-                    child: SingleChildScrollView(
+                    child: const SingleChildScrollView(
                       child: Column(
                         children: [
                           SizedBox(height: 30,),
@@ -58,6 +58,6 @@ class Error_Page extends StatelessWidget {
           ),
         ),
       ),
-    );;
+    );
   }
 }

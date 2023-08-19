@@ -6,7 +6,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool? isBackButton;
 
-  CommonAppBar({required this.title, this.isBackButton});
+  const CommonAppBar({super.key, required this.title, this.isBackButton});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
