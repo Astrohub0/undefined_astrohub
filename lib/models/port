@@ -1,14 +1,14 @@
 import '../../models/enums/solar_system.dart';
 import '../../models/enums/day.dart';
 
-class Planet{
+class Port{
 
-  Planet({this.planetCode,this.planetName});
+  Port({this.portCode,this.portName});
 
-  String? planetCode="";
-  String? planetName="";
-  String? planetThumbnail="";
-  String? planetDescription="";
+  String? portCode="";
+  String? portName="";
+  String? portThumbnail="";
+  String? portDescription="";
   SolarSystem solarSystem= SolarSystem.local;
   String? timeZone="";
   Day? day=Day.monday;  
