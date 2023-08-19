@@ -16,8 +16,8 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  CraftType selectedCraftType = CraftType.cruise; // Default selected type
-  CabinType selectedCabinType = CabinType.economy; // Default selected type
+  CraftType selectedCraftType = CraftType.Cruise; // Default selected type
+  CabinType selectedCabinType = CabinType.Economy; // Default selected type
 
   void _onCabinDropdownChanged(CabinType value) {
     setState(() {

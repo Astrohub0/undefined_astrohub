@@ -1,4 +1,4 @@
 enum CraftType {
-  cruise,
-  shuttle,
+  Cruise,
+  Shuttle,
 }
