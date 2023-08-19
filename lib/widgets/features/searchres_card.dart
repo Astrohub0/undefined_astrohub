@@ -164,7 +164,9 @@ Widget searchResult(
                   ],
                 ),
                 Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                  Text(
+                  classLabel(getColorByClassName(className), className),
+                  const SizedBox(height: 5),
+                   Text(
                     '$price \$',
                     textAlign: TextAlign.right,
                     style: const TextStyle(
@@ -174,8 +176,7 @@ Widget searchResult(
                       letterSpacing: 0.31,
                     ),
                   ),
-                  const SizedBox(height: 5),
-                  classLabel(getColorByClassName(className), className),
+                  
                 ]),
               ],
             ),
