@@ -2,6 +2,7 @@ import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/common_search.dart';
 import 'package:astro_hub/widgets/global/recently_searched_card.dart';
 import 'package:flutter/material.dart';
+import '../constants/image_paths.dart' as image_paths;
 
 class SearchDeparture extends StatefulWidget {
   const SearchDeparture({Key? key}) : super(key: key);
@@ -29,31 +30,31 @@ class SearchDepartureState extends State<SearchDeparture> {
               child: ListView(
                 children: [
                   recentlySearched(context,
-                      imgUrl: 'assets/images/minimars.png',
+                      imgUrl: image_paths.miniMars,
                       title: 'MS01',
                       subtitle: 'Mars-01'),
                   recentlySearched(context,
-                      imgUrl: 'assets/images/minimars.png',
+                      imgUrl: image_paths.miniMars,
                       title: 'MS01',
                       subtitle: 'Mars-01'),
                   recentlySearched(context,
-                      imgUrl: 'assets/images/minimars.png',
+                      imgUrl: image_paths.miniMars,
                       title: 'MS01',
                       subtitle: 'Mars-01'),
                   recentlySearched(context,
-                      imgUrl: 'assets/images/minimars.png',
+                      imgUrl: image_paths.miniMars,
                       title: 'MS01',
                       subtitle: 'Mars-01'),
                   recentlySearched(context,
-                      imgUrl: 'assets/images/minimars.png',
+                      imgUrl: image_paths.miniMars,
                       title: 'MS01',
                       subtitle: 'Mars-01'),
                   recentlySearched(context,
-                      imgUrl: 'assets/images/minimars.png',
+                      imgUrl: image_paths.miniMars,
                       title: 'MS01',
                       subtitle: 'Mars-01'),
                   recentlySearched(context,
-                      imgUrl: 'assets/images/minimars.png',
+                      imgUrl: image_paths.miniMars,
                       title: 'MS01',
                       subtitle: 'Mars-01'),
                 ],
