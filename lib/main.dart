@@ -18,7 +18,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Astrohub',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.transparent,
+        // 0xFF4CFF5E
+        scaffoldBackgroundColor: Color(
+          0xFF03132C,
+        ),
         appBarTheme: const AppBarTheme(
           color: Colors.transparent,
         ),
