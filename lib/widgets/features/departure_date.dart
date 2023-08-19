@@ -36,6 +36,8 @@ class DepartureDatePickState extends State<DepartureDatePick> {
       setState(() {
         fromDate = picked.start;
         toDate = picked.end;
+        print(fromDate);
+        print(toDate);
       });
     }
   }
