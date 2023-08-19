@@ -1,6 +1,7 @@
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
+import '../constants/image_paths.dart' as image_paths;
 
 class NoAvailableCrafts extends StatelessWidget {
   const NoAvailableCrafts({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class NoAvailableCrafts extends StatelessWidget {
           child: Column(
             children: [
               // image
-              Image.asset('assets/images/space-man-elipse.png'),
+              Image.asset(image_paths.spacemanElipse),
               Text(
                   'Sorry :(',
                   style: TextStyle(

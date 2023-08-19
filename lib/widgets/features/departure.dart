@@ -4,7 +4,7 @@ import 'package:astro_hub/utils/router.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
-import '../../constants/imagePaths.dart' as images;
+import '../../constants/image_paths.dart' as images;
 
 Widget departure(BuildContext context,
     {required String title,

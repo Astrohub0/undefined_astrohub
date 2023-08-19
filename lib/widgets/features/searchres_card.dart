@@ -4,6 +4,8 @@ import 'package:astro_hub/widgets/global/class_label.dart';
 import 'package:astro_hub/widgets/global/company_label.dart';
 import 'package:flutter/material.dart';
 
+import '../../constants/image_paths.dart' as image_paths;
+
 Widget searchResult(
   BuildContext context,
   //for parameters we can pass data about two planets as two objects(key value pairs)
