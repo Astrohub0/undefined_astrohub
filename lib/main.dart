@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
           ),
         ),
-        SearchResults()
+        
       ],
     );
   }

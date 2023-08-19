@@ -33,7 +33,7 @@ class SearchResultsState extends State<SearchResults> {
       appBar: const CommonAppBar(title: 'RESULTS', isBackButton: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-        child: ListView(children: [
+        child: ListView( children: [
           GlassmorphicContainer(
               width: width * 0.8,
               height: 80,
@@ -56,12 +56,15 @@ class SearchResultsState extends State<SearchResults> {
                   Color.fromARGB(81, 186, 30, 103),
                 ],
               ),
-              child: const Text(
-                'Your flight is impacted by severe weather conditions, leading to potential delays or disruptions. Please stay tuned for further updates.',
-                style: TextStyle(
-                  color: Color(0xFFB9B7BC),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w300,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Text(
+                  'Your flight is impacted by severe weather conditions, leading to potential delays or disruptions. Please stay tuned for further updates.',
+                  style: TextStyle(
+                    color: Color(0xFFB9B7BC),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                  ),
                 ),
               )),
           SizedBox(height: height * 0.01),
@@ -88,67 +91,64 @@ class SearchResultsState extends State<SearchResults> {
               'Economy',
               '5800.97'),
           SizedBox(height: height * 0.01),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GlassmorphicContainer(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GlassmorphicContainer(
+                width: width * 0.3,
+                height: height * 0.06,
+                borderRadius: 8.0,
+                linearGradient: AppGradients.glassInputGradient,
+                border: 0.5,
+                blur: 50,
+                borderGradient: const LinearGradient(
+                  begin: Alignment(0.59, 0.80),
+                  end: Alignment(-0.59, -0.8),
+                  colors: [
+                    Color(0x4AFFFFFF),
+                    Color(0x0AFFFFFF),
+                  ],
+                ),
+                child: Container(
+                  // Wrap DropdownButton with Container
                   width: width * 0.3,
                   height: height * 0.06,
-                  borderRadius: 8.0,
-                  linearGradient: AppGradients.glassInputGradient,
-                  border: 0.5,
-                  blur: 50,
-                  borderGradient: const LinearGradient(
-                    begin: Alignment(0.59, 0.80),
-                    end: Alignment(-0.59, -0.8),
-                    colors: [
-                      Color(0x4AFFFFFF),
-                      Color(0x0AFFFFFF),
-                    ],
-                  ),
-                  child: Container(
-                    // Wrap DropdownButton with Container
-                    width: width * 0.3,
-                    height: height * 0.06,
-                    child: DropdownButton<String>(
-                      dropdownColor: const Color(0xFF31A27),
-                      padding: const EdgeInsets.only(left: 20),
-                      underline: Container(), // Remove underline
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.6),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
-                      value: selectedFilters.toString(),
-                      onChanged: (String? value) {
-                        if (value != null) {
-                          _onFilterChanged(Filters.values
-                              .firstWhere((type) => type.toString() == value));
-                        }
-                      },
-                      items: Filters.values.map((Filters value) {
-                        return DropdownMenuItem<String>(
-                          value: value.toString(),
-                          child: Text(value.toString().split('.').last),
-                        );
-                      }).toList(),
+                  child: DropdownButton<String>(
+                    dropdownColor: const Color(0xFF31A27),
+                    padding: const EdgeInsets.only(left: 20),
+                    underline: Container(), // Remove underline
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.6),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
                     ),
+                    value: selectedFilters.toString(),
+                    onChanged: (String? value) {
+                      if (value != null) {
+                        _onFilterChanged(Filters.values
+                            .firstWhere((type) => type.toString() == value));
+                      }
+                    },
+                    items: Filters.values.map((Filters value) {
+                      return DropdownMenuItem<String>(
+                        value: value.toString(),
+                        child: Text(value.toString().split('.').last),
+                      );
+                    }).toList(),
                   ),
                 ),
-                TextButton(
-                  onPressed: (() {}),
-                  child: const Text('Show Results',
-                      style: TextStyle(
-                        color: Colors.white,
-                        decoration: TextDecoration.underline,
-                        fontSize: 10,
-                        fontWeight: FontWeight.w500,
-                      )),
-                ),
-              ],
-            ),
+              ),
+              TextButton(
+                onPressed: (() {}),
+                child: const Text('Show Results',
+                    style: TextStyle(
+                      color: Colors.white,
+                      decoration: TextDecoration.underline,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w500,
+                    )),
+              ),
+            ],
           ),
           SfRangeSlider(
             min: 0.0,
