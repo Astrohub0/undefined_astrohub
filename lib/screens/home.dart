@@ -38,7 +38,6 @@ class HomeState extends State<Home> {
 
     return SafeArea(
       child: Scaffold(
-        
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -137,15 +136,14 @@ class HomeState extends State<Home> {
                               onChanged: (String? value) {
                                 if (value != null) {
                                   _onShuttleDropdownChanged(CraftType.values
-                                      .firstWhere((type) =>
-                                          type.toString() == value));
+                                      .firstWhere(
+                                          (type) => type.toString() == value));
                                 }
                               },
                               items: CraftType.values.map((CraftType value) {
                                 return DropdownMenuItem<String>(
                                   value: value.toString(),
-                                  child:
-                                      Text(value.toString().split('.').last),
+                                  child: Text(value.toString().split('.').last),
                                 );
                               }).toList(),
                             ),
@@ -199,16 +197,14 @@ class HomeState extends State<Home> {
                               onChanged: (String? value) {
                                 if (value != null) {
                                   _onCabinDropdownChanged(CabinType.values
-                                      .firstWhere((type) =>
-                                          type.toString() == value));
+                                      .firstWhere(
+                                          (type) => type.toString() == value));
                                 }
                               },
-                              items:
-                                  CabinType.values.map((CabinType value) {
+                              items: CabinType.values.map((CabinType value) {
                                 return DropdownMenuItem<String>(
                                   value: value.toString(),
-                                  child: Text(
-                                      value.toString().split('.').last),
+                                  child: Text(value.toString().split('.').last),
                                 );
                               }).toList(),
                             ),
@@ -274,7 +270,7 @@ class HomeState extends State<Home> {
                 ),
               ]),
         ),
-        floatingActionButton: bookFlight(),
+        floatingActionButton: bookFlight(context),
       ),
     );
   }
