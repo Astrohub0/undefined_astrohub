@@ -1,6 +1,4 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/screens/book_round_trip.dart';
-import 'package:astro_hub/screens/home.dart';
 import 'package:astro_hub/screens/search_results.dart';
 import 'package:flutter/material.dart';
 
@@ -58,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
           ),
         ),
-        BookRoundTrip()
+        
       ],
     );
   }
