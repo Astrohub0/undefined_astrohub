@@ -14,7 +14,7 @@ class Trip{
   int? noOfStops = 1;
   Planet? planetFrom;
   Planet? planetTo;
-  List<CabinType> cabinType = [CabinType.economy,CabinType.business];
+  List<CabinType> cabinType = [CabinType.Economy,CabinType.Business];
   List<SpaceLine>? spaceline;
   bool isDiscounted = false;
   double? price;
