@@ -4,6 +4,8 @@ import 'package:astro_hub/widgets/global/class_label.dart';
 import 'package:astro_hub/widgets/global/company_label.dart';
 import 'package:flutter/material.dart';
 
+import '../../constants/image_paths.dart' as image_paths;
+
 Widget searchResult(
   BuildContext context,
   //for parameters we can pass data about two planets as two objects(key value pairs)
@@ -101,7 +103,7 @@ Widget searchResult(
                     color: AppColors.primarySolid01,
                   ),
                 ),
-                Image.asset('assets/images/minirocket.png', width: 50),
+                Image.asset(image_paths.miniRocket, width: 50),
                 Container(
                   padding: const EdgeInsets.only(top: 15),
                   width: width * 0.18,
@@ -164,7 +166,9 @@ Widget searchResult(
                   ],
                 ),
                 Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                  Text(
+                  classLabel(getColorByClassName(className), className),
+                  const SizedBox(height: 5),
+                   Text(
                     '$price \$',
                     textAlign: TextAlign.right,
                     style: const TextStyle(
@@ -174,8 +178,7 @@ Widget searchResult(
                       letterSpacing: 0.31,
                     ),
                   ),
-                  const SizedBox(height: 5),
-                  classLabel(getColorByClassName(className), className),
+                  
                 ]),
               ],
             ),

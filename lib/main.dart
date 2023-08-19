@@ -1,10 +1,16 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/screens/book_round_trip.dart';
 import 'package:astro_hub/screens/home.dart';
 import 'package:astro_hub/screens/search_results.dart';
 import 'package:flutter/material.dart';
+import 'constants/image_paths.dart' as image_paths;
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async{
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -53,12 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
         Positioned.fill(
           //
           child: Image(
-            image: AssetImage("assets/images/bg.png"),
+            image: AssetImage(image_paths.bgImage),
             fit: BoxFit.fill,
             width: double.infinity,
           ),
         ),
-        BookRoundTrip()
+      Home()  
       ],
     );
   }

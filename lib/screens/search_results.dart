@@ -31,63 +31,67 @@ class SearchResultsState extends State<SearchResults> {
 
     return Scaffold(
       appBar: const CommonAppBar(title: 'RESULTS', isBackButton: true),
-      body:
-        Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        GlassmorphicContainer(
-            width: width * 0.8,
-            height: 80,
-            blur: 50,
-            border: 2,
-            borderGradient: const LinearGradient(
-              begin: Alignment(0.59, 0.80),
-              end: Alignment(-0.59, -0.8),
-              colors: [
-                Color.fromRGBO(190, 132, 132, 0.05),
-                Color.fromRGBO(190, 132, 132, 0.05),
-              ],
-            ),
-            borderRadius: 16.0,
-            linearGradient: const LinearGradient(
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-              colors: [
-                Color.fromARGB(104, 186, 30, 103),
-                Color.fromARGB(81, 186, 30, 103),
-              ],
-            ),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text(
-                'Your flight is impacted by severe weather conditions, leading to potential delays or disruptions. Please stay tuned for further updates.',
-                style: TextStyle(
-                  color: Color(0xFFB9B7BC),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w300,
-                ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        child: ListView(children: [
+          GlassmorphicContainer(
+              width: width * 0.8,
+              height: 80,
+              blur: 50,
+              border: 2,
+              borderGradient: const LinearGradient(
+                begin: Alignment(0.59, 0.80),
+                end: Alignment(-0.59, -0.8),
+                colors: [
+                  Color.fromRGBO(190, 132, 132, 0.05),
+                  Color.fromRGBO(190, 132, 132, 0.05),
+                ],
               ),
-            )),
-        const SizedBox(height: 20),
-        searchResult(
-            context,
-            {
-              'imgUrl': 'assets/images/miniearth.png',
-              'name': "Earth",
-              'time': "12:00",
-              'date': "12 Aug"
-            },
-            {
-              'imgUrl': 'assets/images/minimars.png',
-              'name': "Mars",
-              'time': "4:00",
-              'date': "19 Feb"
-            },
-            [],
-            '5800.97',
-            'Economy'),
-        const SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Row(
+              borderRadius: 16.0,
+              linearGradient: const LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [
+                  Color.fromARGB(104, 186, 30, 103),
+                  Color.fromARGB(81, 186, 30, 103),
+                ],
+              ),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Text(
+                  'Your flight is impacted by severe weather conditions, leading to potential delays or disruptions. Please stay tuned for further updates.',
+                  style: TextStyle(
+                    color: Color(0xFFB9B7BC),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+              )),
+          SizedBox(height: height * 0.01),
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Text('Best Search Results For You',
+                  style: TextStyles.subtopicText)),
+          SizedBox(height: height * 0.01),
+          searchResult(
+              context,
+              {
+                'imgUrl': 'assets/images/miniearth.png',
+                'name': "Earth",
+                'time': "12:00",
+                'date': "12 Aug"
+              },
+              {
+                'imgUrl': 'assets/images/minimars.png',
+                'name': "Mars",
+                'time': "4:00",
+                'date': "19 Feb"
+              },
+              [],
+              'Economy',
+              '5800.97'),
+          SizedBox(height: height * 0.01),
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GlassmorphicContainer(
@@ -144,26 +148,47 @@ class SearchResultsState extends State<SearchResults> {
                       fontWeight: FontWeight.w500,
                     )),
               ),
-              
             ],
           ),
-        ),
-        SfRangeSlider(
-        min: 0.0,
-        max: 100.0,
-        values: _values,
-        interval: 20,
-        showTicks: true,
-        showLabels: true,
-        enableTooltip: true,
-        minorTicksPerInterval: 1,
-        onChanged: (SfRangeValues values){
-          setState(() {
-            _values = values;
-          });
-        },
+          SfRangeSlider(
+            min: 0.0,
+            max: 100.0,
+            values: _values,
+            interval: 20,
+            showTicks: true,
+            showLabels: true,
+            enableTooltip: true,
+            minorTicksPerInterval: 1,
+            onChanged: (SfRangeValues values) {
+              setState(() {
+                _values = values;
+              });
+            },
+          ),
+          SizedBox(height: height * 0.01),
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Text('Lowest Fares', style: TextStyles.subtopicText)),
+          SizedBox(height: height * 0.01),
+          searchResult(
+              context,
+              {
+                'imgUrl': 'assets/images/miniearth.png',
+                'name': "Earth",
+                'time': "12:00",
+                'date': "12 Aug"
+              },
+              {
+                'imgUrl': 'assets/images/minimars.png',
+                'name': "Mars",
+                'time': "4:00",
+                'date': "19 Feb"
+              },
+              [],
+              'Economy',
+              '5800.97'),
+        ]),
       ),
-      ]),
     );
   }
 }
