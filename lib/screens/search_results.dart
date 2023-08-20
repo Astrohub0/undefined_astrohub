@@ -38,7 +38,7 @@ class SearchResultsState extends State<SearchResults> {
         child: ListView(children: [
           GlassmorphicContainer(
               width: width * 0.8,
-              height: 80,
+              height: height * 0.1,
               blur: 50,
               border: 2,
               borderGradient: const LinearGradient(
