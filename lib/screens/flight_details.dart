@@ -14,9 +14,6 @@ import 'package:astro_hub/widgets/global/planet_description_summary.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-
-import '../services/get_flights.dart';
 
 class FlightDetails extends StatelessWidget {
   FlightDetails({required this.info});
@@ -125,8 +122,8 @@ class FlightDetails extends StatelessWidget {
                           SizedBox(
                               width: MediaQuery.of(context).size.width * 0.05),
                           FlightRequirementTile(
-                              imageUrl: "assets/images/helmet.png",
-                              title: "Required Head Gear"),
+                              imageUrl: "assets/images/tropical.png",
+                              title: "Tropical Weather"),
                         ],
                       ),
                     ),

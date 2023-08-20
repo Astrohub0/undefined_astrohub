@@ -32,6 +32,9 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           color: Colors.transparent,
         ),
+        textTheme: TextTheme(
+          bodyText1: TextStyle(color: Colors.white),
+        ),
         fontFamily: 'SairaSemiCondensed',
         colorScheme: ColorScheme.fromSeed(
             seedColor: AppColors.primarySolid01,
