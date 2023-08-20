@@ -39,7 +39,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
     return SafeArea(
       child: Scaffold(
         appBar: CommonAppBar(title: 'SERVICE DETAILS', isBackButton: true),
-        drawer: NavBar(),
+        endDrawer: NavBar(),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
           child: ListView(

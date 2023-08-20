@@ -21,7 +21,7 @@ class _LandingState extends State<Landing> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: CommonAppBar(title: ''),
-      drawer: NavBar(),
+      endDrawer: NavBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20),
         child: ListView(

@@ -8,6 +8,7 @@ import 'package:astro_hub/widgets/global/company_label.dart';
 import 'package:astro_hub/widgets/global/flight_requirement_tile.dart';
 import 'package:astro_hub/widgets/global/journey_path.dart';
 import 'package:astro_hub/widgets/global/local_attractions_section.dart';
+import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:astro_hub/widgets/global/planet_description_summary.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class FlightDetails extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CommonAppBar(title: "Flight Details", isBackButton: true),
-        drawer: Drawer(),
+        endDrawer: NavBar(),
         body: 
           GlassmorphicContainer(
             width: width,
