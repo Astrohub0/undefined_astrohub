@@ -1,4 +1,6 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/models/travel_data.dart';
+import 'package:astro_hub/screens/service_details.dart';
 import 'package:astro_hub/screens/traveller_details.dart';
 import 'package:astro_hub/utils/get_label_color.dart';
 import 'package:astro_hub/utils/router.dart';
@@ -14,8 +16,9 @@ import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
 class FlightDetails extends StatelessWidget {
-  FlightDetails({super.key});
+  FlightDetails({required this.info});
 
+  final SpaceTravelInfo info;
   final planet1 = {
     'imgUrl': 'assets/images/miniearth.png',
     'name': "Earth",
@@ -183,7 +186,7 @@ class FlightDetails extends StatelessWidget {
                   const SizedBox(height: 20),
                   primaryButton(context, 'CONTINUE', onPressed: () {
                     PageNavigator(context: context)
-                        .nextPage(TravellerDetails());
+                        .nextPage(TravellerDetails(noOfAdultSeats: 2, noOfInfantSeats: 1, spaceTravelInfo: info));
                   })
                 ],
               ),

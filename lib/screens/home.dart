@@ -1,15 +1,15 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/enums/craft_type.dart';
-import 'package:astro_hub/screens/recent_trips.dart';
+import 'package:astro_hub/models/travel_data.dart';
 import 'package:astro_hub/screens/search_departure.dart';
 import 'package:astro_hub/screens/search_results.dart';
 import 'package:astro_hub/screens/service_details.dart';
+import 'package:astro_hub/services/get_flights.dart';
 import 'package:astro_hub/screens/traveller_details.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/models/enums/cabin_type.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
 import 'package:astro_hub/widgets/features/departure_date.dart';
-import 'package:astro_hub/widgets/global/common_number_input.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -112,6 +112,23 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
+    void proceedToSearchResult() {
+      print("${departureData["port"]} hehe");
+      // if (depatureDates["fromDate"] != null && depatureDates["toDate"] != null &&
+      //     arrivalDates["fromDate"] != null && arrivalDates["toDate"] != null &&
+      //     departureData["port"] !='' && arrivalData["port"]  !='' &&
+      //     selectedCraftType  != '' && selectedCabinType  != '' &&
+      //     numberOfPassengers != 0) {
+      GetFlights().getFlights(
+          context: context,
+          fromPort: departureData["port"]!,
+          toPort: arrivalData["port"]!,
+          shuttleType: selectedCraftType,
+          cabinType: selectedCabinType,
+          noOfPassengers: numberOfPassengers);
+      // }
+    }
 
     return SafeArea(
       child: Scaffold(
@@ -440,7 +457,41 @@ class HomeState extends State<Home> {
             ),
             const SizedBox(height: 20),
             primaryButton(context, 'FIND CRAFTS', onPressed: () {
-              PageNavigator(context: context).nextPage( SearchResults());
+              SpaceTravelInfo info = SpaceTravelInfo(
+                  fromPort: departureData["port"]!,
+                  toPort: arrivalData["port"]!,
+                  departureDates: depatureDates,
+                  arrivalDates: arrivalDates,
+                  selectedShuttleType: selectedCraftType.name!,
+                  selectedCabinType: selectedCabinType.name,
+                  // for craft if Cruise else shuttle create a new map
+                  craft: selectedCraftType == CraftType.Cruise
+                      ? {
+                          "craft_type": "Cruise",
+                          "total_business_seats": 12,
+                          "total_econ_seats": "5800.97 \$",
+                        }
+                      : {
+                          "craft_type": "Shuttle",
+                          "total_business_seats": "assets/images/shuttle.png",
+                          "total_econ_seats": 23
+                        },
+                spacecraftAttributes: {
+                    "is_cargo": false,
+                    "is_pets_allowed": false
+                },
+                availableBusinessSeats: 102,
+                availableEconSeats: 122,
+                ticketPrices: {
+                  "additional_luggage_per_kg": 30,
+                  "business_base_price": 8299.98,
+                  "economy_base_price": 5489.98,
+                },
+                spacecraftId: "FL-11313",
+                spaceline: "SpaceX",
+                totalDistance: 10012434,
+              );
+              PageNavigator(context: context).nextPage(SearchResults(info: info,));
             })
           ]),
         ),
