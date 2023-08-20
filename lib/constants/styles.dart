@@ -66,6 +66,19 @@ class TextStyles {
     fontSize: 14,
     fontWeight: FontWeight.w700,
   );
+
+  //for recenttrips container
+  static const TextStyle keytext = TextStyle(
+    color: Colors.white,
+    fontSize: 8,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle valueText = TextStyle(
+    color: Colors.white,
+    fontSize: 8,
+    fontWeight: FontWeight.w300,
+  );
 }
 
 class AppColors {

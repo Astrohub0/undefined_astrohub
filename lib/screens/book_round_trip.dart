@@ -2,6 +2,7 @@ import 'package:astro_hub/models/enums/trip_type.dart';
 import 'package:astro_hub/screens/home.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/common_tabbar.dart';
+import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:flutter/material.dart';
 import '../constants/icon_paths.dart' as icons;
 
@@ -17,6 +18,7 @@ class BookRoundTripState extends State<BookRoundTrip> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CommonAppBar(title: 'Book A Trip', isBackButton: true),
+        drawer: NavBar(),
         body: CommonTabbar(
             tab1: 'Round Trip',
             tab2: 'One Way',

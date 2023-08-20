@@ -44,6 +44,7 @@ class FlightDetails extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CommonAppBar(title: "Flight Details", isBackButton: true),
+        drawer: Drawer(),
         body: 
           GlassmorphicContainer(
             width: width,

@@ -2,6 +2,7 @@ import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/screens/landing.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
+import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
@@ -36,6 +37,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
     return SafeArea(
       child: Scaffold(
         appBar: CommonAppBar(title: 'SERVICE DETAILS', isBackButton: true),
+        drawer: NavBar(),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
           child: ListView(

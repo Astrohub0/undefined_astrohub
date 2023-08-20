@@ -1,3 +1,4 @@
+import 'package:astro_hub/constants/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -44,13 +45,8 @@ class _MyHomePageState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     bool isChecked = false;
-    return Scaffold(
-      appBar: AppBar(title: Text("NavBar")),
-      body: Center(
-        child: _widgetOptions[_selectedIndex],
-      ),
-      endDrawer: Drawer(
-        backgroundColor: const Color(0x0C181818),
+    return Drawer(
+        backgroundColor: AppColors.primarySolid02,
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
         // space to fit everything.
@@ -71,10 +67,10 @@ class _MyHomePageState extends State<NavBar> {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 13,
                         fontWeight: FontWeight.w700,
-                        ),
                       ),
+                    ),
                     Text(
                       'View Profile',
                       textAlign: TextAlign.right,
@@ -82,16 +78,16 @@ class _MyHomePageState extends State<NavBar> {
                         color: Colors.white,
                         fontSize: 13,
                         fontWeight: FontWeight.w300,
-                        ),
                       ),
+                    ),
                   ],
                 ),
                 SizedBox(
                   width: 8,
                 ),
                 GFAvatar(
-                  backgroundImage:NetworkImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.comingsoon.net%2Ftv%2Ffeatures%2F1290979-what-you-need-to-know-about-don-cheadles-james-rhodey-rhodes-secret-invasion&psig=AOvVaw1lHKHRI0qwyk219PjEdz5o&ust=1692609954142000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNjd-cr16oADFQAAAAAdAAAAABAJ")
-                ),
+                    backgroundImage: NetworkImage(
+                        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.comingsoon.net%2Ftv%2Ffeatures%2F1290979-what-you-need-to-know-about-don-cheadles-james-rhodey-rhodes-secret-invasion&psig=AOvVaw1lHKHRI0qwyk219PjEdz5o&ust=1692609954142000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNjd-cr16oADFQAAAAAdAAAAABAJ")),
                 SizedBox(width: 20.0),
               ],
             ),
@@ -104,11 +100,11 @@ class _MyHomePageState extends State<NavBar> {
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    ),
                   ),
                 ),
+              ),
               selected: _selectedIndex == 0,
               onTap: () {
                 // Update the state of the app
@@ -125,11 +121,11 @@ class _MyHomePageState extends State<NavBar> {
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    ),
                   ),
                 ),
+              ),
               selected: _selectedIndex == 1,
               onTap: () {
                 // Update the state of the app
@@ -146,11 +142,11 @@ class _MyHomePageState extends State<NavBar> {
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    ),
                   ),
                 ),
+              ),
               selected: _selectedIndex == 2,
               onTap: () {
                 // Update the state of the app
@@ -167,11 +163,11 @@ class _MyHomePageState extends State<NavBar> {
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    ),
                   ),
                 ),
+              ),
               selected: _selectedIndex == 3,
               onTap: () {
                 // Update the state of the app
@@ -189,11 +185,11 @@ class _MyHomePageState extends State<NavBar> {
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     color: Color(0xFFFAB520),
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    ),
                   ),
                 ),
+              ),
               selected: _selectedIndex == 4,
               onTap: () {
                 // Update the state of the app
@@ -204,13 +200,13 @@ class _MyHomePageState extends State<NavBar> {
             ),
             const SizedBox(height: 48.0),
             Container(
-            width: 246,
-            decoration: ShapeDecoration(
-              shape: RoundedRectangleBorder(
-                side: BorderSide(
-                  width: 0.50,
-                  strokeAlign: BorderSide.strokeAlignCenter,
-                  color: Colors.white.withOpacity(0.6000000238418579),
+              width: 246,
+              decoration: ShapeDecoration(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    width: 0.50,
+                    strokeAlign: BorderSide.strokeAlignCenter,
+                    color: Colors.white.withOpacity(0.6000000238418579),
                   ),
                 ),
               ),
@@ -236,23 +232,22 @@ class _MyHomePageState extends State<NavBar> {
                       color: Color(0xFF0E8BD3),
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
-                      ),
                     ),
+                  ),
                 ),
                 const SizedBox(height: 20.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset('assets/images/fromIntergalacticRight.png', height: 40),
+                    Image.asset('assets/images/fromIntergalacticRight.png',
+                        height: 40),
                     const SizedBox(width: 30.0),
                   ],
                 ),
               ],
             ),
           ],
-        ),
-      ),
-    );
+        ));
   }
 }
