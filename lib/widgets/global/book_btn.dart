@@ -15,9 +15,8 @@ Widget bookFlight(context) {
     onPressed: (() {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
         // need to process context
-        Future flights = getFlights();
+        Future<dynamic> flights = GetFlights().getFlights(context: context);
         print(flights);
-        print(context);
         //return const NoAvailableCrafts();
         return BookRoundTrip();
       }));

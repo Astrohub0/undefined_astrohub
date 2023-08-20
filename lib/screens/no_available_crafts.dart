@@ -1,4 +1,5 @@
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
+import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import '../constants/image_paths.dart' as image_paths;
@@ -16,6 +17,7 @@ class NoAvailableCrafts extends StatelessWidget {
           title: 'Select a craft',
           isBackButton: true,
         ),
+        drawer: NavBar(),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
           // i need a container to display an image, a text and a button one after the other

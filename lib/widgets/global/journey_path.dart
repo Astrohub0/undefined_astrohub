@@ -2,6 +2,8 @@ import 'package:astro_hub/constants/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../constants/image_paths.dart' as image_paths;
+
 class JourneyPath extends StatelessWidget {
 
   const JourneyPath({
@@ -63,7 +65,7 @@ class JourneyPath extends StatelessWidget {
               color: AppColors.primarySolid01,
             ),
           ),
-          Image.asset('assets/images/minirocket.png', width: 50),
+          Image.asset(image_paths.miniRocket, width: 50),
           Container(
             padding: const EdgeInsets.only(top: 15),
             width: width * 0.18,
