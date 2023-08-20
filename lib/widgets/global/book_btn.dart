@@ -17,7 +17,7 @@ Widget bookFlight(context) {
         // need to process context
         Future<dynamic> flights = getFlights();
         //return const NoAvailableCrafts();
-        return FlightDetails();
+        return BookRoundTrip();
       }));
     }),
     tooltip: 'Book a flight',
