@@ -1,14 +1,14 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/enums/craft_type.dart';
-import 'package:astro_hub/screens/recent_trips.dart';
+import 'package:astro_hub/models/travel_data.dart';
 import 'package:astro_hub/screens/search_departure.dart';
 import 'package:astro_hub/screens/search_results.dart';
 import 'package:astro_hub/screens/service_details.dart';
+import 'package:astro_hub/services/get_flights.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/models/enums/cabin_type.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
 import 'package:astro_hub/widgets/features/departure_date.dart';
-import 'package:astro_hub/widgets/global/common_number_input.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -111,6 +111,23 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
+    void proceedToSearchResult () {
+      print("${departureData["port"]} hehe");
+      // if (depatureDates["fromDate"] != null && depatureDates["toDate"] != null &&
+      //     arrivalDates["fromDate"] != null && arrivalDates["toDate"] != null &&
+      //     departureData["port"] !='' && arrivalData["port"]  !='' &&
+      //     selectedCraftType  != '' && selectedCabinType  != '' &&
+      //     numberOfPassengers != 0) {
+        GetFlights().getFlights(
+            context: context,
+            fromPort: departureData["port"]!,
+            toPort: arrivalData["port"]!,
+            shuttleType: selectedCraftType,
+            cabinType: selectedCabinType,
+            noOfPassengers: numberOfPassengers);
+      // }
+    }
 
     return SafeArea(
       child: Scaffold(
@@ -444,7 +461,7 @@ class HomeState extends State<Home> {
             ),
             const SizedBox(height: 20),
             primaryButton(context, 'FIND CRAFTS', onPressed: () {
-              PageNavigator(context: context).nextPage(const ServiceDetails());
+              proceedToSearchResult();
             })
           ]),
         ),

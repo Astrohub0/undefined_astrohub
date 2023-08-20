@@ -1,3 +1,5 @@
+import 'package:astro_hub/models/passenger.dart';
+
 class SpaceTravelInfo {
   final Map<String, dynamic> ticketPrices;
   final int availableEconSeats;
@@ -9,6 +11,11 @@ class SpaceTravelInfo {
   final String toPort;
   final int availableBusinessSeats;
   final String fromPort;
+  String? departurePlanetInfo;
+  String? selectedCabinType;
+  String? selectedShuttleType;
+  String? selectedClass;
+  List<Passenger>? passengers;
 
   SpaceTravelInfo({
     required this.ticketPrices,
@@ -22,6 +29,13 @@ class SpaceTravelInfo {
     required this.availableBusinessSeats,
     required this.fromPort,
   });
+
+  // write a to String method
+  @override
+  String toString() {
+      return 'SpaceTravelInfo(ticketPrices: $ticketPrices, availableEconSeats: $availableEconSeats, spaceline: $spaceline, spacecraftAttributes: $spacecraftAttributes, spacecraftId: $spacecraftId, craft: $craft, totalDistance: $totalDistance, toPort: $toPort, availableBusinessSeats: $availableBusinessSeats, fromPort: $fromPort)';
+  }
+
 
   factory SpaceTravelInfo.fromJson(Map<String, dynamic> json) {
   return SpaceTravelInfo(
