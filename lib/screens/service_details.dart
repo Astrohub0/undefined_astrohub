@@ -1,4 +1,5 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/models/travel_data.dart';
 import 'package:astro_hub/screens/checkout.dart';
 import 'package:astro_hub/screens/landing.dart';
 import 'package:astro_hub/utils/router.dart';
@@ -9,8 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
 class ServiceDetails extends StatefulWidget {
-  const ServiceDetails({Key? key}) : super(key: key);
-
+  ServiceDetails({
+    Key? key,
+    required this.spaceTravelInfo,
+  }) : super(key: key);
+  SpaceTravelInfo spaceTravelInfo;
   @override
   _ServiceDetailsState createState() => _ServiceDetailsState();
 }
@@ -18,7 +22,8 @@ class ServiceDetails extends StatefulWidget {
 class _ServiceDetailsState extends State<ServiceDetails> {
   Color? _selectedColor = Colors.red; // Default color
 
-  void _handleRadioValueChanged(Color? color) {
+  void _handleRadioValueChanged(Color? color, String? className) {
+    widget.spaceTravelInfo.selectedClass = className!;
     setState(() {
       _selectedColor = color;
     });
@@ -70,7 +75,8 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         Radio(
                           value: Colors.blue,
                           groupValue: _selectedColor,
-                          onChanged: (color) => _handleRadioValueChanged(color),
+                          onChanged: (color) =>
+                              _handleRadioValueChanged(color, "Economy"),
                         ),
                       ],
                     ),
@@ -118,7 +124,8 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         Radio(
                           value: Colors.red,
                           groupValue: _selectedColor,
-                          onChanged: (color) => _handleRadioValueChanged(color),
+                          onChanged: (color) =>
+                              _handleRadioValueChanged(color, "Business"),
                         ),
                       ],
                     ),

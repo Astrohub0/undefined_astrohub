@@ -11,10 +11,11 @@ import 'package:flutter/material.dart';
 
 class TravellerDetails extends StatefulWidget {
   TravellerDetails(
-      {super.key, this.noOfAdultSeats = 2, this.noOfInfantSeats = 1});
+      {super.key, this.noOfAdultSeats = 2, this.noOfInfantSeats = 1, required this.spaceTravelInfo});
 
   final noOfAdultSeats;
   final noOfInfantSeats;
+  final spaceTravelInfo;
 
   @override
   State<TravellerDetails> createState() => _TravellerDetailsState();
@@ -22,6 +23,7 @@ class TravellerDetails extends StatefulWidget {
 
 class _TravellerDetailsState extends State<TravellerDetails> {
   bool isPassengerDetailsValid = false;
+  List<Passenger> passengers = [];
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +63,7 @@ class _TravellerDetailsState extends State<TravellerDetails> {
                 travellerCount: widget.noOfInfantSeats,
                 onPassengerDetailsUpdated: (passengerDetails) {
                   isPassengerDetailsValid = passengerDetails["isValid"]!;
+                  print(passengerDetails);
                 },
               ),
             ),
@@ -118,11 +121,10 @@ class _TravellerDetailsState extends State<TravellerDetails> {
               height: 20,
             ),
             primaryButton(context, "CONTINUE", onPressed: () {
-              print("object");
+              // widget.spaceTravelInfo.passengers = passengers;
+              print(widget.spaceTravelInfo.passengers);
               if (isPassengerDetailsValid) {
-                PageNavigator(context: context).nextPage(ServiceDetails());
-              } else {
-                // show a snackbar
+                PageNavigator(context: context).nextPage(ServiceDetails(spaceTravelInfo: widget.spaceTravelInfo));
               }
             })
           ],
