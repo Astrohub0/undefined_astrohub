@@ -18,7 +18,7 @@ class BookRoundTripState extends State<BookRoundTrip> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CommonAppBar(title: 'Book A Trip', isBackButton: true),
-        drawer: NavBar(),
+        endDrawer: NavBar(),
         body: CommonTabbar(
             tab1: 'Round Trip',
             tab2: 'One Way',

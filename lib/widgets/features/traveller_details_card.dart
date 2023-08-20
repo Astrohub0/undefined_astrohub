@@ -8,8 +8,7 @@ import '../../models/passenger.dart';
 import '../../models/passengerFieldDto.dart';
 
 class TravellerDetailsCard extends StatefulWidget {
-
-   TravellerDetailsCard({
+  TravellerDetailsCard({
     super.key,
     required this.travellerType,
     required this.travellerCount,
@@ -24,11 +23,9 @@ class TravellerDetailsCard extends StatefulWidget {
 
   @override
   State<TravellerDetailsCard> createState() => _TravellerDetailsCardState();
-
 }
 
 class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
-
   bool validatePassengerDetails() {
     for (var passenger in widget.passengers) {
       if (passenger.firstName == "" || passenger.lastName == "") {
@@ -38,13 +35,11 @@ class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
     return true;
   }
 
-
-
   @override
   void initState() {
     super.initState();
     for (var i = 0; i < widget.travellerCount; i++) {
-      widget.passengers.add(Passenger (
+      widget.passengers.add(Passenger(
         id: "${DateTime.now().millisecondsSinceEpoch}",
         firstName: "",
         lastName: "",
@@ -109,20 +104,22 @@ class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
                     ),
                   ),
                   const SizedBox(width: 10),
-                  widget.travellerType == "Adult" ? const Icon(
-                    Icons.person,
-                    color: Colors.white,
-                    size: 20,
-                  ) : const Icon(
-                    Icons.child_care,
-                    color: Colors.white,
-                    size: 20,
-                  ),
+                  widget.travellerType == "Adult"
+                      ? const Icon(
+                          Icons.person,
+                          color: Colors.white,
+                          size: 20,
+                        )
+                      : const Icon(
+                          Icons.child_care,
+                          color: Colors.white,
+                          size: 20,
+                        ),
                 ],
               ),
               const SizedBox(height: 10),
-                for (var passenger in widget.passengers )
-                Column (
+              for (var passenger in widget.passengers)
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Row(
@@ -138,21 +135,32 @@ class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
                       ],
                     ),
                     const SizedBox(height: 10),
-                    GlassMorphTextCard(text: "First name", onTextValueChange: (value) {
-                      widget.passengers.firstWhere((element) => element.id == passenger.id).firstName = value;
-                      widget.passengerDtos.firstWhere((element) => element.id == passenger.id).firstNameIsDirty = true;
-                      setState(() {
-
-                      });
-                      widget.onPassengerDetailsUpdated (
-                        {
-                          "isValid": validatePassengerDetails(),
-                          "passengerDetails": widget.passengers,
-                        }
-                      );
-                    }),
+                    GlassMorphTextCard(
+                        text: "First name",
+                        onTextValueChange: (value) {
+                          widget.passengers
+                              .firstWhere(
+                                  (element) => element.id == passenger.id)
+                              .firstName = value;
+                          widget.passengerDtos
+                              .firstWhere(
+                                  (element) => element.id == passenger.id)
+                              .firstNameIsDirty = true;
+                          setState(() {});
+                          widget.onPassengerDetailsUpdated({
+                            "isValid": validatePassengerDetails(),
+                            "passengerDetails": widget.passengers,
+                          });
+                        }),
                     const SizedBox(height: 5),
-                    if (widget.passengerDtos.firstWhere((element) => element.id == passenger.id).firstNameIsDirty && widget.passengers.firstWhere((element) => element.id == passenger.id).firstName == "")
+                    if (widget.passengerDtos
+                            .firstWhere((element) => element.id == passenger.id)
+                            .firstNameIsDirty &&
+                        widget.passengers
+                                .firstWhere(
+                                    (element) => element.id == passenger.id)
+                                .firstName ==
+                            "")
                       Text(
                         "Please enter a  valid first name",
                         style: const TextStyle(
@@ -162,21 +170,32 @@ class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
                         ),
                       ),
                     const SizedBox(height: 10),
-                    GlassMorphTextCard(text: "Last name/Family", onTextValueChange: (value) {
-                      widget.passengers.firstWhere((element) => element.id == passenger.id).lastName = value;
-                      widget.passengerDtos.firstWhere((element) => element.id == passenger.id).lastNameIsDirty = true;
-                      setState(() {
-
-                      });
-                      widget.onPassengerDetailsUpdated (
-                        {
-                          "isValid": validatePassengerDetails(),
-                          "passengerDetails": widget.passengers,
-                        }
-                      );
-                    }),
+                    GlassMorphTextCard(
+                        text: "Last name/Family",
+                        onTextValueChange: (value) {
+                          widget.passengers
+                              .firstWhere(
+                                  (element) => element.id == passenger.id)
+                              .lastName = value;
+                          widget.passengerDtos
+                              .firstWhere(
+                                  (element) => element.id == passenger.id)
+                              .lastNameIsDirty = true;
+                          setState(() {});
+                          widget.onPassengerDetailsUpdated({
+                            "isValid": validatePassengerDetails(),
+                            "passengerDetails": widget.passengers,
+                          });
+                        }),
                     const SizedBox(height: 5),
-                    if (widget.passengerDtos.firstWhere((element) => element.id == passenger.id).lastNameIsDirty &&  widget.passengers.firstWhere((element) => element.id == passenger.id).lastName == "")
+                    if (widget.passengerDtos
+                            .firstWhere((element) => element.id == passenger.id)
+                            .lastNameIsDirty &&
+                        widget.passengers
+                                .firstWhere(
+                                    (element) => element.id == passenger.id)
+                                .lastName ==
+                            "")
                       Text(
                         "Please enter a  valid last name",
                         style: const TextStyle(

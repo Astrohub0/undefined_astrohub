@@ -1,5 +1,6 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/travel_data.dart';
+import 'package:astro_hub/screens/checkout.dart';
 import 'package:astro_hub/screens/landing.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
@@ -7,10 +8,12 @@ import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
+
 class ServiceDetails extends StatefulWidget {
-   ServiceDetails(
-      {Key? key, required this.spaceTravelInfo,})
-    : super(key: key);
+  ServiceDetails({
+    Key? key,
+    required this.spaceTravelInfo,
+  }) : super(key: key);
   SpaceTravelInfo spaceTravelInfo;
   @override
   _ServiceDetailsState createState() => _ServiceDetailsState();
@@ -41,7 +44,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
     return SafeArea(
       child: Scaffold(
         appBar: CommonAppBar(title: 'SERVICE DETAILS', isBackButton: true),
-        drawer: NavBar(),
+        endDrawer: NavBar(),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 45.0, vertical: 10.0),
           child: ListView(
@@ -62,24 +65,24 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Economy ',
+                          'Business ',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 17,
-                            fontFamily: 'Saira SemiCondensed',
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         Radio(
                           value: Colors.blue,
                           groupValue: _selectedColor,
-                          onChanged: (color) => _handleRadioValueChanged(color, "Economy"),
+                          onChanged: (color) =>
+                              _handleRadioValueChanged(color, "Economy"),
                         ),
                       ],
                     ),
                     Row(
                       children: [
-                        Image.asset('assets/images/economyImg.png', width: 90),
+                        Image.asset('assets/images/businessImg.png', width: 90),
                         Spacer(),
                         Text(
                             'Zero-gravity with\n attachable belts \n 25kg luggage \n7kg cabin baggage',
@@ -121,7 +124,8 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         Radio(
                           value: Colors.red,
                           groupValue: _selectedColor,
-                          onChanged: (color) => _handleRadioValueChanged(color, "Business"),
+                          onChanged: (color) =>
+                              _handleRadioValueChanged(color, "Business"),
                         ),
                       ],
                     ),
@@ -302,7 +306,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                 ],
               ),
               primaryButton(context, 'Checkout', onPressed: (() {
-                PageNavigator(context: context).nextPage( const Landing());
+                PageNavigator(context: context).nextPage(const Checkout());
               })),
             ],
           ),

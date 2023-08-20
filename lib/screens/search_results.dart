@@ -10,9 +10,8 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class SearchResults extends StatefulWidget {
-  const SearchResults({Key? key, required this.info,}) 
-  : super(key: key);
-  final SpaceTravelInfo info;
+  const SearchResults({Key? key}) : super(key: key);
+  //final SpaceTravelInfo info;
 
   @override
   SearchResultsState createState() => SearchResultsState();
@@ -26,9 +25,6 @@ class SearchResultsState extends State<SearchResults> {
       selectedFilters = value;
     });
   }
-  void viewOutput(){
-    print(widget.info.fromPort);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,48 +34,45 @@ class SearchResultsState extends State<SearchResults> {
 
     return Scaffold(
       appBar: const CommonAppBar(title: 'RESULTS', isBackButton: true),
-      drawer: NavBar(),
+      endDrawer: NavBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: ListView(children: [
-          Text(widget.info.fromPort, style: TextStyles.subtopicText),
+          //Text(widget.info.fromPort, style: TextStyles.subtopicText),
 
-          GestureDetector(
-            onTap: viewOutput,
-            child: GlassmorphicContainer(
-                width: width * 0.8,
-                height: height * 0.1,
-                blur: 50,
-                border: 2,
-                borderGradient: const LinearGradient(
-                  begin: Alignment(0.59, 0.80),
-                  end: Alignment(-0.59, -0.8),
-                  colors: [
-                    Color.fromRGBO(190, 132, 132, 0.05),
-                    Color.fromRGBO(190, 132, 132, 0.05),
-                  ],
-                ),
-                borderRadius: 16.0,
-                linearGradient: const LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [
-                    Color.fromARGB(104, 186, 30, 103),
-                    Color.fromARGB(81, 186, 30, 103),
-                  ],
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Text(
-                    'Your flight is impacted by severe weather conditions, leading to potential delays or disruptions. Please stay tuned for further updates.',
-                    style: TextStyle(
-                      color: Color(0xFFB9B7BC),
-                      fontSize: 12,
-                      fontWeight: FontWeight.w300,
-                    ),
+          GlassmorphicContainer(
+              width: width * 0.8,
+              height: height * 0.1,
+              blur: 50,
+              border: 2,
+              borderGradient: const LinearGradient(
+                begin: Alignment(0.59, 0.80),
+                end: Alignment(-0.59, -0.8),
+                colors: [
+                  Color.fromRGBO(190, 132, 132, 0.05),
+                  Color.fromRGBO(190, 132, 132, 0.05),
+                ],
+              ),
+              borderRadius: 16.0,
+              linearGradient: const LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [
+                  Color.fromARGB(104, 186, 30, 103),
+                  Color.fromARGB(81, 186, 30, 103),
+                ],
+              ),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Text(
+                  'Your flight is impacted by severe weather conditions, leading to potential delays or disruptions. Please stay tuned for further updates.',
+                  style: TextStyle(
+                    color: Color(0xFFB9B7BC),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
                   ),
-                )),
-          ),
+                ),
+              )),
           SizedBox(height: height * 0.01),
           Align(
               alignment: Alignment.centerLeft,
