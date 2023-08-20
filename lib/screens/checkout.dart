@@ -1,3 +1,4 @@
+import 'package:astro_hub/models/travel_data.dart';
 import 'package:astro_hub/screens/amex.dart';
 import 'package:astro_hub/screens/home.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
@@ -7,7 +8,8 @@ import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:flutter/material.dart';
 
 class Checkout extends StatefulWidget {
-  const Checkout({Key? key}) : super(key: key);
+  const Checkout({Key? key, required this.spaceTravelInfo}) : super(key: key);
+  final SpaceTravelInfo spaceTravelInfo;
 
   @override
   _CheckoutState createState() => _CheckoutState();

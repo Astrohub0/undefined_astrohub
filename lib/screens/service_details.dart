@@ -306,7 +306,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                 ],
               ),
               primaryButton(context, 'Checkout', onPressed: (() {
-                PageNavigator(context: context).nextPage(const Checkout());
+                PageNavigator(context: context).nextPage(Checkout(spaceTravelInfo: widget.spaceTravelInfo));
               })),
             ],
           ),
