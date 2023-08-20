@@ -350,7 +350,8 @@ class HomeState extends State<Home> {
                           ],
                         ),
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: width * 0.01),
                           width: width * 0.25,
                           height: height * 0.05,
                           child: TextField(
@@ -373,7 +374,6 @@ class HomeState extends State<Home> {
                       ),
                     ],
                   ),
-                  
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -402,7 +402,8 @@ class HomeState extends State<Home> {
                           ],
                         ),
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: width * 0.01),
                           width: width,
                           height: height,
                           child: TextField(
