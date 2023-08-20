@@ -1,4 +1,5 @@
 import 'package:astro_hub/widgets/features/recent_trip_card.dart';
+import 'package:astro_hub/widgets/global/book_btn.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,7 @@ class RecentTripsState extends State<RecentTrips> {
           ],
         ),
       ),
+      floatingActionButton: bookFlight(context),
     ));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:astro_hub/models/travel_data.dart';
+import 'package:astro_hub/screens/book_round_trip.dart';
 import 'package:astro_hub/screens/search_results.dart';
 import 'package:astro_hub/widgets/features/searchres_card.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -36,11 +37,10 @@ class GetFlights {
             SpaceTravelInfo flightData = SpaceTravelInfo.fromJson(
               doc.data() as Map<String, dynamic>,
             );
-// Assuming you have a fromJson method in your Trip model
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => SearchResults(info: flightData),
+                builder: (context) => BookRoundTrip(),
               ),
             );
           }
