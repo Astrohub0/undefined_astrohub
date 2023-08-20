@@ -186,7 +186,7 @@ class FlightDetails extends StatelessWidget {
                   const SizedBox(height: 20),
                   primaryButton(context, 'CONTINUE', onPressed: () {
                     PageNavigator(context: context)
-                        .nextPage(TravellerDetails(noOfAdultSeats: 2, noOfInfantSeats: 1, spaceTravelInfo: info));
+                        .nextPage(ServiceDetails(spaceTravelInfo: info));
                   })
                 ],
               ),
