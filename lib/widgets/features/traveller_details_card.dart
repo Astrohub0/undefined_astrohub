@@ -26,6 +26,8 @@ class TravellerDetailsCard extends StatefulWidget {
 }
 
 class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
+   String LastName = '';
+    String FirstName = '';
   bool validatePassengerDetails() {
     for (var passenger in widget.passengers) {
       if (passenger.firstName == "" || passenger.lastName == "") {

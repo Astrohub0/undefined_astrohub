@@ -79,7 +79,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         Image.asset('assets/images/businessImg.png', width: 90),
                         Spacer(),
                         Text(
-                            'Zero-gravity with\n attachable belts \n 25kg luggage \n7kg cabin baggage',
+                            'Fixed according to earth gravity.\n (1.0G) 35kg luggage \n 10kg cabin baggage',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 14,
