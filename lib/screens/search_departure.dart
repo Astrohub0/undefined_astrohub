@@ -1,6 +1,7 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/common_search.dart';
+import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:astro_hub/widgets/global/recently_searched_card.dart';
 import 'package:flutter/material.dart';
 import '../constants/image_paths.dart' as image_paths;
@@ -50,6 +51,7 @@ class SearchDepartureState extends State<SearchDeparture> {
     return SafeArea(
       child: Scaffold(
         appBar: const CommonAppBar(title: 'Select Port', isBackButton: true),
+        drawer: NavBar(),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

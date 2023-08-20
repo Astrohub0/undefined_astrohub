@@ -2,6 +2,7 @@ import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/enums/filters.dart';
 import 'package:astro_hub/widgets/features/searchres_card.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
+import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
@@ -31,6 +32,7 @@ class SearchResultsState extends State<SearchResults> {
 
     return Scaffold(
       appBar: const CommonAppBar(title: 'RESULTS', isBackButton: true),
+      drawer: NavBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: ListView(children: [

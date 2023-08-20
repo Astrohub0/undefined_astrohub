@@ -40,7 +40,9 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
             : Image.asset('assets/images/logo.png', width: 104),
         actions: [
           GestureDetector(
-              onTap: (() {}),
+              onTap: (() {
+                Scaffold.of(context).openDrawer();
+              }),
               child: SvgPicture.asset('assets/icons/hamburger.svg')),
         ],
       ),

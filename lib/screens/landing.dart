@@ -4,6 +4,7 @@ import 'package:astro_hub/widgets/features/upcoming_trips.dart';
 import 'package:astro_hub/widgets/global/book_btn.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/common_search.dart';
+import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:flutter/material.dart';
 
 class Landing extends StatefulWidget {
@@ -20,6 +21,7 @@ class _LandingState extends State<Landing> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: CommonAppBar(title: ''),
+      drawer: NavBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20),
         child: ListView(
