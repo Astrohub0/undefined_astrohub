@@ -26,6 +26,8 @@ class TravellerDetailsCard extends StatefulWidget {
 }
 
 class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
+   String LastName = '';
+    String FirstName = '';
   bool validatePassengerDetails() {
     for (var passenger in widget.passengers) {
       if (passenger.firstName == "" || passenger.lastName == "") {
@@ -146,7 +148,6 @@ class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
                               .firstWhere(
                                   (element) => element.id == passenger.id)
                               .firstNameIsDirty = true;
-                          setState(() {});
                           widget.onPassengerDetailsUpdated({
                             "isValid": validatePassengerDetails(),
                             "passengerDetails": widget.passengers,
@@ -181,7 +182,6 @@ class _TravellerDetailsCardState extends State<TravellerDetailsCard> {
                               .firstWhere(
                                   (element) => element.id == passenger.id)
                               .lastNameIsDirty = true;
-                          setState(() {});
                           widget.onPassengerDetailsUpdated({
                             "isValid": validatePassengerDetails(),
                             "passengerDetails": widget.passengers,

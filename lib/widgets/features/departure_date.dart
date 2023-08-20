@@ -31,6 +31,21 @@ class DepartureDatePickState extends State<DepartureDatePick> {
       fieldEndHintText: 'End date',
       fieldStartLabelText: 'Start Date',
       fieldEndLabelText: 'End Date',
+      builder:  (context, child) {
+        return Theme(
+          data: ThemeData.light().copyWith(
+            colorScheme: ColorScheme.light(
+              primary: Color.fromARGB(255, 1, 22, 84),
+              onPrimary: Colors.white,
+              surface: const Color.fromARGB(255, 231, 231, 231)
+              
+            ),
+            dialogBackgroundColor: AppColors.primarySolid01,
+          ),
+          child: child!,
+        );
+        
+      },
     );
 
     if (picked != null) {

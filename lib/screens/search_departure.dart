@@ -39,6 +39,8 @@ class SearchDepartureState extends State<SearchDeparture> {
         } else {
           updateSelectedValues(imgUrl, title, subtitle); // Select the value
           widget.onSelection(imgUrl, title, subtitle);
+          // close the screen
+          Navigator.pop(context);
         }
       },
       child: recentlySearched(context,
@@ -75,8 +77,8 @@ class SearchDepartureState extends State<SearchDeparture> {
               height: MediaQuery.of(context).size.height * 0.6,
               child: ListView(
                 children: [
-                  buildRow(context, image_paths.miniMars, 'MS01', 'Mars-01'),
-                  buildRow(context, image_paths.miniMars, 'ER01', 'Earth-02')
+                  buildRow(context, image_paths.miniMars, 'MS01', 'MARS-001'),
+                  buildRow(context, image_paths.miniMars, 'ER01', 'EARTH-007')
                 ],
               ),
             )

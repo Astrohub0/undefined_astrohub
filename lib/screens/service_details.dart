@@ -1,4 +1,5 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/models/travel_data.dart';
 import 'package:astro_hub/screens/checkout.dart';
 import 'package:astro_hub/screens/landing.dart';
 import 'package:astro_hub/utils/router.dart';
@@ -9,8 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
 class ServiceDetails extends StatefulWidget {
-  const ServiceDetails({Key? key}) : super(key: key);
-
+  ServiceDetails({
+    Key? key,
+    required this.spaceTravelInfo,
+  }) : super(key: key);
+  SpaceTravelInfo spaceTravelInfo;
   @override
   _ServiceDetailsState createState() => _ServiceDetailsState();
 }
@@ -18,7 +22,8 @@ class ServiceDetails extends StatefulWidget {
 class _ServiceDetailsState extends State<ServiceDetails> {
   Color? _selectedColor = Colors.red; // Default color
 
-  void _handleRadioValueChanged(Color? color) {
+  void _handleRadioValueChanged(Color? color, String? className) {
+    widget.spaceTravelInfo.selectedClass = className!;
     setState(() {
       _selectedColor = color;
     });
@@ -70,7 +75,8 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         Radio(
                           value: Colors.blue,
                           groupValue: _selectedColor,
-                          onChanged: (color) => _handleRadioValueChanged(color),
+                          onChanged: (color) =>
+                              _handleRadioValueChanged(color, "Economy"),
                         ),
                       ],
                     ),
@@ -79,7 +85,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         Image.asset('assets/images/businessImg.png', width: 90),
                         Spacer(),
                         Text(
-                            'Zero-gravity with\n attachable belts \n 25kg luggage \n7kg cabin baggage',
+                            'Fixed according to earth gravity.\n (1.0G) 35kg luggage \n 10kg cabin baggage',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 14,
@@ -118,7 +124,8 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         Radio(
                           value: Colors.red,
                           groupValue: _selectedColor,
-                          onChanged: (color) => _handleRadioValueChanged(color),
+                          onChanged: (color) =>
+                              _handleRadioValueChanged(color, "Business"),
                         ),
                       ],
                     ),
@@ -299,7 +306,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                 ],
               ),
               primaryButton(context, 'Checkout', onPressed: (() {
-                PageNavigator(context: context).nextPage(const Checkout());
+                PageNavigator(context: context).nextPage(Checkout(spaceTravelInfo: widget.spaceTravelInfo));
               })),
             ],
           ),

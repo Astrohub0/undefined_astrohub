@@ -10,8 +10,10 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class SearchResults extends StatefulWidget {
-  const SearchResults({Key? key}) : super(key: key);
-  //final SpaceTravelInfo info;
+
+  const SearchResults({Key? key, required this.info}) : super(key: key);
+
+  final SpaceTravelInfo info;
 
   @override
   SearchResultsState createState() => SearchResultsState();
@@ -95,7 +97,8 @@ class SearchResultsState extends State<SearchResults> {
               },
               [],
               'Economy',
-              '5800.97'),
+              '5800.97',
+          widget.info),
           SizedBox(height: height * 0.01),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -192,7 +195,8 @@ class SearchResultsState extends State<SearchResults> {
               },
               [],
               'Economy',
-              '5800.97'),
+              '5800.97',
+          widget.info),
         ]),
       ),
     );

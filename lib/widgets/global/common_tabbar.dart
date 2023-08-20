@@ -95,7 +95,13 @@ class CommonTabbarState extends State<CommonTabbar> {
                           const SizedBox(
                               width:
                                   4), // Add some spacing between icon and text
-                          Text(widget.tab1),
+                          Text(
+                            widget.tab1,
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -107,7 +113,13 @@ class CommonTabbarState extends State<CommonTabbar> {
                           const SizedBox(
                               width:
                                   4), // Add some spacing between icon and text
-                          Text(widget.tab2),
+                          Text(
+                            widget.tab2,
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -119,7 +131,13 @@ class CommonTabbarState extends State<CommonTabbar> {
                           const SizedBox(
                               width:
                                   4), // Add some spacing between icon and text
-                          Text(widget.tab3),
+                          Text(
+                            widget.tab3,
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ],
                       ),
                     ),
