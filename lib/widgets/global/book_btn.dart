@@ -4,16 +4,24 @@ import 'package:astro_hub/screens/no_available_crafts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../services/get_flights.dart';
+import '../../constants/icon_paths.dart' as icons;
+
 Widget bookFlight(context) {
   return FloatingActionButton(
     backgroundColor: AppColors.primarySolid01,
     shape: const CircleBorder(),
     onPressed: (() {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
+        // need to process context
+        Future flights = getFlights();
+        print(flights);
+        print(context);
+        //return const NoAvailableCrafts();
         return FlightDetails();
       }));
     }),
     tooltip: 'Book a flight',
-    child: SvgPicture.asset('assets/icons/rocket.svg'),
+    child: SvgPicture.asset(icons.rocket),
   );
 }

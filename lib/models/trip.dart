@@ -1,6 +1,6 @@
 import '../../models/planet.dart';
 import '../../models/spaceline.dart';
-import '../../models/enums/shuttle_type.dart';
+import 'enums/cabin_type.dart';
 
 class Trip{
 
