@@ -19,7 +19,7 @@ Widget bookFlight(context) {
         print(flights);
         print(context);
         //return const NoAvailableCrafts();
-        return FlightDetails();
+        return BookRoundTrip();
       }));
     }),
     tooltip: 'Book a flight',
