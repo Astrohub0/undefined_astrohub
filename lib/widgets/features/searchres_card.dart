@@ -36,11 +36,11 @@ Widget searchResult(
   price ??= '5800.97';
   return GestureDetector(
     onTap: () {
-       PageNavigator(context: context).nextPage( FlightDetails());
+      PageNavigator(context: context).nextPage(FlightDetails());
     },
     child: Container(
         width: width * 0.9,
-        height: height * 0.36,
+        height: height * 0.37,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.white.withOpacity(0.20)),
@@ -57,6 +57,15 @@ Widget searchResult(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
             children: [
+              const Text(
+                '2 stops',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 10,
+                  fontFamily: 'Saira SemiCondensed',
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +108,7 @@ Widget searchResult(
                       )
                     ],
                   ),
-  
+
                   Container(
                     padding: const EdgeInsets.only(top: 15),
                     width: width * 0.18,
@@ -173,7 +182,7 @@ Widget searchResult(
                   Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
                     classLabel(getColorByClassName(className), className),
                     const SizedBox(height: 5),
-                     Text(
+                    Text(
                       '$price \$',
                       textAlign: TextAlign.right,
                       style: const TextStyle(
@@ -183,7 +192,6 @@ Widget searchResult(
                         letterSpacing: 0.31,
                       ),
                     ),
-                    
                   ]),
                 ],
               ),
