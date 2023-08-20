@@ -1,6 +1,7 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/enums/craft_type.dart';
 import 'package:astro_hub/screens/search_results.dart';
+import 'package:astro_hub/screens/traveller_details.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/models/enums/cabin_type.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
@@ -277,7 +278,7 @@ class HomeState extends State<Home> {
                 ),
                 const SizedBox(height: 20),
                 primaryButton(context, 'FIND CRAFTS', onPressed: () {
-                  PageNavigator(context: context).nextPage(const SearchResults());
+                  PageNavigator(context: context).nextPage( TravellerDetails());
                 })
               ]),
         ),
