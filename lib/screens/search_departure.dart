@@ -51,7 +51,7 @@ class SearchDepartureState extends State<SearchDeparture> {
     return SafeArea(
       child: Scaffold(
         appBar: const CommonAppBar(title: 'Select Port', isBackButton: true),
-        drawer: NavBar(),
+        endDrawer: NavBar(),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

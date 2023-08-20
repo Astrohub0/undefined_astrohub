@@ -19,7 +19,7 @@ class NoAvailableCrafts extends StatelessWidget {
           title: 'Select a craft',
           isBackButton: true,
         ),
-        drawer: NavBar(),
+        endDrawer: NavBar(),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 30, 10, 10),
           // i need a container to display an image, a text and a button one after the other

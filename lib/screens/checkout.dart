@@ -20,9 +20,9 @@ class _CheckoutState extends State<Checkout> {
         child: Scaffold(
             appBar: CommonAppBar(title: 'CHECKOUT', isBackButton: true),
             body: CommonTabbar(
-                tab1: 'Round Trip',
-                tab2: 'One Way',
-                tab3: 'Multi Planet',
+                tab1: 'Paypal',
+                tab2: 'Amex',
+                tab3: 'Bitcoin',
                 tab1Widget: Amex(),
                 tab2Widget: Text('jhghh'),
                 tab3Widget: Text('hhmb hm'),
