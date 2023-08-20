@@ -38,7 +38,7 @@ class SearchResultsState extends State<SearchResults> {
 
     return Scaffold(
       appBar: const CommonAppBar(title: 'RESULTS', isBackButton: true),
-      drawer: NavBar(),
+      endDrawer: NavBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: ListView(children: [

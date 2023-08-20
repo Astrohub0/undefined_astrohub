@@ -18,7 +18,7 @@ class RecentTripsState extends State<RecentTrips> {
     return SafeArea(
         child: Scaffold(
       appBar: CommonAppBar(title: 'RECENT TRIPS', isBackButton: true),
-      drawer: NavBar(),
+      endDrawer: NavBar(),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: width * 0.04),
         width: width * 8,
