@@ -1,14 +1,10 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/screens/home.dart';
 import 'package:astro_hub/screens/landing.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
-import 'package:astro_hub/widgets/global/custom_radio_btn.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import 'package:provider/provider.dart';
-
 class ServiceDetails extends StatefulWidget {
   const ServiceDetails({Key? key}) : super(key: key);
 
