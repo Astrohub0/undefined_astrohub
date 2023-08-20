@@ -22,10 +22,10 @@ class MakeBooking {
     return bookings
       .add({
           'date': dateNow, 
-          'no_of_tickets': 2,//booking.tickets.length, 
+          'no_of_tickets': 3,//booking.tickets.length, 
           'purchase_invoice': 'D5rGHbwhmduiIbOiZCdB',
-          'tickets' : booking!.tickets.toString(),
-          'total_amount' :  booking!.tickets,
+          'tickets' : 'booking.tickets.toString()',
+          'total_amount' : ' booking.tickets',
           'user_id' : userId 
           
         })

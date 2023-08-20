@@ -6,6 +6,8 @@ import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
+import '../services/make_booking.dart';
+
 class Amex extends StatefulWidget {
   const Amex({Key? key}) : super(key: key);
 
@@ -258,6 +260,7 @@ class _AmexState extends State<Amex> {
           SizedBox(height: height * 0.05),
           primaryButton(context, 'Checkout', onPressed: () {
             //PageNavigator(context: context).nextPage(RecentTrips());
+            MakeBooking().addPurchase();
           })
         ],
       ),
