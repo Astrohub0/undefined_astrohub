@@ -7,6 +7,7 @@ import 'package:astro_hub/widgets/global/button.dart';
 import 'package:astro_hub/widgets/global/class_label.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/common_number_input.dart';
+import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:astro_hub/widgets/global/tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
@@ -21,8 +22,6 @@ class Test extends StatefulWidget {
 class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: boardingpass(context)),
-    );
+    return const NavBar();
   }
 }
