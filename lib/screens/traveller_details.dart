@@ -6,31 +6,23 @@ import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TravellerDetails extends StatelessWidget {
-  TravellerDetails({super.key});
+class TravellerDetails extends StatefulWidget {
 
-  // inintialze a set of passengers
-  final List<Passenger> passengers = [
-    Passenger (
-      id: "11A",
-      name: "John Doe",
-      passengerType: "Adult",
-    ),
-    Passenger (
-      id: "11B",
-      name: "Jane Doe",
-      passengerType: "Adult",
-    ),
-    Passenger (
-      id: "11C",
-      name: "John Doe Jr.",
-      passengerType: "Infant",
-    ),
-  ];
+  TravellerDetails({super.key, this.noOfAdultSeats = 2, this.noOfInfantSeats = 1});
 
+  final noOfAdultSeats;
+  final noOfInfantSeats;
+
+  @override
+  State<TravellerDetails> createState() => _TravellerDetailsState();
+}
+
+class _TravellerDetailsState extends State<TravellerDetails> {
+  bool isPassengerDetailsValid = false;
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         appBar: CommonAppBar(
@@ -47,8 +39,10 @@ class TravellerDetails extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.3,
                 child: TravellerDetailsCard(
                   travellerType: "Adult",
-                  travellerCount: passengers.where((element) => element.passengerType == "Adult").length.toString(),
-                  passengers: passengers.where((element) => element.passengerType == "Adult").toList(),
+                  travellerCount: widget.noOfAdultSeats,
+                  onPassengerDetailsUpdated: (passengerDetails) {
+                    isPassengerDetailsValid = passengerDetails["isValid"]!;
+                  },
                 ),
               ),
               const SizedBox(height: 20,),
@@ -57,8 +51,10 @@ class TravellerDetails extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.3,
                 child: TravellerDetailsCard(
                   travellerType: "Infant",
-                  travellerCount: passengers.where((element) => element.passengerType == "Infant").length.toString(),
-                  passengers: passengers.where((element) => element.passengerType == "Infant").toList(),
+                  travellerCount: widget.noOfInfantSeats,
+                  onPassengerDetailsUpdated: (passengerDetails) {
+                    isPassengerDetailsValid = passengerDetails["isValid"]!;
+                  },
                 ),
               ),
               const SizedBox(height: 20,),
@@ -83,9 +79,8 @@ class TravellerDetails extends StatelessWidget {
                       ),
                       child: Column(
                         children: [
-                          // text for Adults adult count and infant count
                           Text (
-                            "Adults: ${passengers.where((element) => element.passengerType == "Adult").length.toString()}",
+                            "Adults: ${widget.noOfAdultSeats}",
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 14,
@@ -94,7 +89,7 @@ class TravellerDetails extends StatelessWidget {
                           ),
                           const SizedBox(height: 2,),
                           Text (
-                            "Infants: ${passengers.where((element) => element.passengerType == "Infant").length.toString()}",
+                            "Infants: ${widget.noOfInfantSeats}",
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 14,
@@ -108,7 +103,15 @@ class TravellerDetails extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20,),
-              primaryButton(context, "CONTINUE", onPressed: () {})
+              primaryButton(context, "CONTINUE", onPressed: () {
+                print("object");
+                if (isPassengerDetailsValid) {
+                  // navigate to the next page
+                }
+                else {
+                  // show a snackbar
+                }
+              })
             ],
           ),
         ),

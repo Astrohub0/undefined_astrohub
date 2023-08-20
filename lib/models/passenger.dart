@@ -2,13 +2,15 @@ class Passenger {
 
   Passenger({
     this.id,
-    this.name,
+    this.firstName,
+    this.lastName,
     this.passengerType,
     // and more
   });
 
   String? id;
-  String? name;
+  String? firstName;
+  String? lastName;
   String? passengerType;
   // and more 
 }
