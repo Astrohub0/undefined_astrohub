@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
 class DepartureDatePick extends StatefulWidget {
-  const DepartureDatePick({super.key});
+  final Function onSelection;
+  const DepartureDatePick({super.key, required this.onSelection});
 
   @override
   DepartureDatePickState createState() => DepartureDatePickState();
@@ -36,6 +37,7 @@ class DepartureDatePickState extends State<DepartureDatePick> {
       setState(() {
         fromDate = picked.start;
         toDate = picked.end;
+        widget.onSelection(fromDate, toDate);
         print(fromDate);
         print(toDate);
       });
