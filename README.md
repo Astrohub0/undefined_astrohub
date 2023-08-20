@@ -8,6 +8,8 @@
 
 Welcome to the official repository of **AstroHub** :rocket: , an Interplanetary Travel Booking Mobile App developed by **Team Undefined** for **Intergalactic**. AstroHub aims to simplify the booking process and provide a seamless user experience for citizens traveling from one planet to another. This app is built using **Flutter** for the front-end and **Firebase** for the back-end implementation, combining the power of modern mobile development with a robust cloud infrastructure. This repository contains a small section of the booking flow: From **searching for a trip**, **viewing** it, **adding configurations** and **checkout**.
 
+- The main branch is **development** 
+
 ## Goals
 The primary goals of AstroHub are:
 - To provide an intuitive and user-friendly platform for booking interplanetary travel.
