@@ -1,5 +1,7 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/passenger.dart';
+import 'package:astro_hub/screens/service_details.dart';
+import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/widgets/features/traveller_details_card.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
@@ -106,7 +108,7 @@ class _TravellerDetailsState extends State<TravellerDetails> {
               primaryButton(context, "CONTINUE", onPressed: () {
                 print("object");
                 if (isPassengerDetailsValid) {
-                  // navigate to the next page
+                  PageNavigator(context: context).nextPage(ServiceDetails());
                 }
                 else {
                   // show a snackbar

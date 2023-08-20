@@ -1,3 +1,5 @@
+import 'package:astro_hub/screens/book_round_trip.dart';
+import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
 import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
@@ -24,33 +26,28 @@ class NoAvailableCrafts extends StatelessWidget {
           child: Column(
             children: [
               // image
-              Image.asset(image_paths.spacemanElipse),
+              Image.asset('assets/images/businessImg.png'),
               Text(
-                  'Sorry :(',
-                  style: TextStyle(
+                'Booking Successfull',
+                style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white
-                  ),
+                    color: Colors.white),
               ),
               // text
               Text(
-                  'No available crafts',
-                  style: TextStyle(
+                'You will receive a confirmation email shortly.',
+                style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white
-                  ),
+                    color: Colors.white),
               ),
               // add a sized box
-              SizedBox(
-                height: height* 0.05
-              ),
+              SizedBox(height: height * 0.05),
               // button
-              primaryButton(
-                context,
-                'Search again'
-              ),
+              primaryButton(context, 'Back to Home', onPressed: () {
+                PageNavigator(context: context).nextPage(BookRoundTrip());
+              }),
             ],
           ),
         ),

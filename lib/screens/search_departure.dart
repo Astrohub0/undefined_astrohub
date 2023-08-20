@@ -59,9 +59,16 @@ class SearchDepartureState extends State<SearchDeparture> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
                 child: searchBar(context, (p0) => null)),
-            Text(selectedImgUrl, style: TextStyles.bodyText),
-            Text(selectedTitle, style: TextStyles.bodyText),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: 
+            [
+              Text(selectedTitle, style: TextStyles.bodyText),
+              SizedBox(width: 10),
             Text(selectedSubtitle, style: TextStyles.bodyText),
+
+            ],),
+            
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
               width: MediaQuery.of(context).size.width * 0.8,

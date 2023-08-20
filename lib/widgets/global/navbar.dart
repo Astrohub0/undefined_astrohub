@@ -1,4 +1,8 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/screens/book_round_trip.dart';
+import 'package:astro_hub/screens/home.dart';
+import 'package:astro_hub/screens/recent_trips.dart';
+import 'package:astro_hub/utils/router.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -39,6 +43,8 @@ class _MyHomePageState extends State<NavBar> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      print('index: $_selectedIndex');
+     
     });
   }
 
@@ -63,7 +69,7 @@ class _MyHomePageState extends State<NavBar> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      'James Rhodes',
+                      'Guest',
                       textAlign: TextAlign.right,
                       style: TextStyle(
                         color: Colors.white,
@@ -109,8 +115,7 @@ class _MyHomePageState extends State<NavBar> {
               onTap: () {
                 // Update the state of the app
                 _onItemTapped(0);
-                // Then close the drawer
-                Navigator.pop(context);
+                PageNavigator(context: context).nextPage(BookRoundTrip());
               },
             ),
             ListTile(
@@ -130,8 +135,8 @@ class _MyHomePageState extends State<NavBar> {
               onTap: () {
                 // Update the state of the app
                 _onItemTapped(1);
+                PageNavigator(context: context).nextPage(RecentTrips());
                 // Then close the drawer
-                Navigator.pop(context);
               },
             ),
             ListTile(
@@ -152,7 +157,6 @@ class _MyHomePageState extends State<NavBar> {
                 // Update the state of the app
                 _onItemTapped(2);
                 // Then close the drawer
-                Navigator.pop(context);
               },
             ),
             ListTile(

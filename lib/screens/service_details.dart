@@ -1,4 +1,5 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/screens/checkout.dart';
 import 'package:astro_hub/screens/landing.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
@@ -6,6 +7,7 @@ import 'package:astro_hub/widgets/global/navbar.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
+
 class ServiceDetails extends StatefulWidget {
   const ServiceDetails({Key? key}) : super(key: key);
 
@@ -58,11 +60,10 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Economy ',
+                          'Business ',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 17,
-                            fontFamily: 'Saira SemiCondensed',
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -75,7 +76,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                     ),
                     Row(
                       children: [
-                        Image.asset('assets/images/economyImg.png', width: 90),
+                        Image.asset('assets/images/businessImg.png', width: 90),
                         Spacer(),
                         Text(
                             'Zero-gravity with\n attachable belts \n 25kg luggage \n7kg cabin baggage',
@@ -298,7 +299,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                 ],
               ),
               primaryButton(context, 'Checkout', onPressed: (() {
-                PageNavigator(context: context).nextPage( const Landing());
+                PageNavigator(context: context).nextPage(const Checkout());
               })),
             ],
           ),

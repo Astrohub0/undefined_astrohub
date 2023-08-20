@@ -4,6 +4,7 @@ import 'package:astro_hub/screens/recent_trips.dart';
 import 'package:astro_hub/screens/search_departure.dart';
 import 'package:astro_hub/screens/search_results.dart';
 import 'package:astro_hub/screens/service_details.dart';
+import 'package:astro_hub/screens/traveller_details.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/models/enums/cabin_type.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
@@ -32,13 +33,13 @@ class HomeState extends State<Home> {
 
   Map<String, String> departureData = {
     'imgUrl': '',
-    'port': '',
-    'description': ''
+    'port': 'From',
+    'description': 'select port of departure'
   }; // Default selected type
   Map<String, String> arrivalData = {
     'imgUrl': '',
-    'port': '',
-    'description': ''
+    'port': 'To',
+    'description': 'select port of arrival'
   }; // Default selected type
   Map<String, DateTime> arrivalDates = {
     'fromDate': DateTime.now(),
@@ -125,8 +126,8 @@ class HomeState extends State<Home> {
                 ));
               },
               child: departure(context,
-                  title: 'From',
-                  subtitle: 'Select Port of Departure',
+                  title: departureData['port'] ?? 'From',
+                  subtitle: departureData['description'] ?? 'Select Port',
                   iconwidget: Transform.rotate(
                     angle: 2.45, //for arrival 3.5
                     child: Container(
@@ -139,10 +140,7 @@ class HomeState extends State<Home> {
                     ),
                   )),
             ),
-            Text(
-              '${departureData['port']} ${departureData['description']}',
-              style: TextStyles.bodyText,
-            ),
+
             SizedBox(height: height * 0.02),
             GestureDetector(
               onTap: () {
@@ -152,8 +150,9 @@ class HomeState extends State<Home> {
                 ));
               },
               child: departure(context,
-                  title: 'To',
-                  subtitle: 'Select Port of Arrival',
+                  title: arrivalData['port'] ?? 'To',
+                  subtitle:
+                      arrivalData['description'] ?? 'Select Port of Arrival',
                   iconwidget: Transform.rotate(
                     angle: 3.5, //for arrival 3.5
                     child: Container(
@@ -166,10 +165,7 @@ class HomeState extends State<Home> {
                     ),
                   )),
             ),
-            Text(
-              '${arrivalData['port']} ${arrivalData['description']}',
-              style: TextStyles.bodyText,
-            ),
+
             SizedBox(height: height * 0.02),
             Align(
                 alignment: Alignment.centerLeft,
@@ -444,7 +440,7 @@ class HomeState extends State<Home> {
             ),
             const SizedBox(height: 20),
             primaryButton(context, 'FIND CRAFTS', onPressed: () {
-              PageNavigator(context: context).nextPage(const ServiceDetails());
+              PageNavigator(context: context).nextPage( SearchResults());
             })
           ]),
         ),

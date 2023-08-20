@@ -1,5 +1,6 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/screens/service_details.dart';
+import 'package:astro_hub/screens/traveller_details.dart';
 import 'package:astro_hub/utils/get_label_color.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/widgets/global/common_app_bar.dart';
@@ -185,7 +186,7 @@ class FlightDetails extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   primaryButton(context, 'CONTINUE', onPressed: () {
-                    PageNavigator(context: context).nextPage(ServiceDetails());
+                    PageNavigator(context: context).nextPage(TravellerDetails());
                   })
                 ],
               ),
