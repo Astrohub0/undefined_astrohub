@@ -15,16 +15,24 @@ class BookRoundTrip extends StatefulWidget {
 class BookRoundTripState extends State<BookRoundTrip> {
   @override
   Widget build(BuildContext context) {
-
-    return const Scaffold(
+    return Scaffold(
         appBar: CommonAppBar(title: 'Book A Trip', isBackButton: true),
         body: CommonTabbar(
             tab1: 'Round Trip',
             tab2: 'One Way',
             tab3: 'Multi Planet',
-            tab1Widget: Home(tripType: 'Round Trip',),
-            tab2Widget: Home(tripType: 'One Way',),
-            tab3Widget: Home(tripType: 'Multi Planet',),
+            tab1Widget: Home(
+              tripType: 'Round Trip',
+              onSelection: (String imgUrl, String title, String subtitle) {},
+            ),
+            tab2Widget: Home(
+              tripType: 'One Way',
+              onSelection: (String imgUrl, String title, String subtitle) {},
+            ),
+            tab3Widget: Home(
+              tripType: 'Multi Planet',
+              onSelection: (String imgUrl, String title, String subtitle) {},
+            ),
             tab1img: 'assets/icons/round_trip.svg',
             tab2img: 'assets/icons/one_way.svg',
             tab3img: 'assets/icons/multi_planet.svg'));

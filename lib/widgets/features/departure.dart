@@ -22,51 +22,46 @@ Widget departure(BuildContext context,
       ),
     ),
   );
-  return GestureDetector(
-    onTap: () {
-      PageNavigator(context: context).nextPage(const SearchDeparture());
-    },
-    child: GlassmorphicContainer(
-      width: width * 0.8,
-      height: 80,
-      blur: 50,
-      border: 2,
-      borderGradient: const LinearGradient(
-        begin: Alignment(0.59, 0.80),
-        end: Alignment(-0.59, -0.8),
-        colors: [
-          Color.fromRGBO(255, 255, 255, 0.05),
-          Color.fromRGBO(255, 255, 255, 0.05)
-        ],
-      ),
-      borderRadius: 16.0,
-      linearGradient: AppGradients.glassBoxGradient,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 15.0, left: 5.0),
-            child: Image.asset(images.planetIcon, width: 50),
-          ),
-          const SizedBox(width: 10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                title,
-                style: TextStyles.departureTitle,
-              ),
-              Text(
-                subtitle,
-                style: TextStyles.departureSubtitle,
-              ),
-            ],
-          ),
-          const Spacer(),
-          iconwidget,
-        ],
-      ),
+  return GlassmorphicContainer(
+    width: width * 0.8,
+    height: 80,
+    blur: 50,
+    border: 2,
+    borderGradient: const LinearGradient(
+      begin: Alignment(0.59, 0.80),
+      end: Alignment(-0.59, -0.8),
+      colors: [
+        Color.fromRGBO(255, 255, 255, 0.05),
+        Color.fromRGBO(255, 255, 255, 0.05)
+      ],
+    ),
+    borderRadius: 16.0,
+    linearGradient: AppGradients.glassBoxGradient,
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 15.0, left: 5.0),
+          child: Image.asset(images.planetIcon, width: 50),
+        ),
+        const SizedBox(width: 10),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: TextStyles.departureTitle,
+            ),
+            Text(
+              subtitle,
+              style: TextStyles.departureSubtitle,
+            ),
+          ],
+        ),
+        const Spacer(),
+        iconwidget,
+      ],
     ),
   );
 }
