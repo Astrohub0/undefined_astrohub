@@ -1,10 +1,11 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/screens/landing.dart';
 import 'package:flutter/material.dart';
-import 'constants/image_paths.dart' as image_paths;
-
 import 'package:firebase_core/firebase_core.dart';
+
 import 'firebase_options.dart';
+import 'constants/image_paths.dart' as image_paths;
+import 'package:astro_hub/screens/test.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
