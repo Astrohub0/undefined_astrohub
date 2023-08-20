@@ -3,6 +3,7 @@ import 'package:astro_hub/models/enums/craft_type.dart';
 import 'package:astro_hub/models/enums/shuttle_type.dart';
 import 'package:astro_hub/screens/search_results.dart';
 import 'package:astro_hub/utils/router.dart';
+import 'package:astro_hub/models/enums/cabin_type.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
 import 'package:astro_hub/widgets/features/departure_date.dart';
 import 'package:astro_hub/widgets/global/common_number_input.dart';
