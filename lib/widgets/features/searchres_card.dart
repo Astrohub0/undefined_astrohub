@@ -1,9 +1,10 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/screens/flight_details.dart';
 import 'package:astro_hub/utils/get_label_color.dart';
 import 'package:astro_hub/widgets/global/class_label.dart';
 import 'package:astro_hub/widgets/global/company_label.dart';
 import 'package:flutter/material.dart';
-
+import 'package:astro_hub/utils/router.dart';
 import '../../constants/image_paths.dart' as image_paths;
 
 Widget searchResult(
@@ -35,7 +36,7 @@ Widget searchResult(
   price ??= '5800.97';
   return GestureDetector(
     onTap: () {
-      
+       PageNavigator(context: context).nextPage( FlightDetails());
     },
     child: Container(
         width: width * 0.9,

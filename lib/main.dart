@@ -1,15 +1,13 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/screens/home.dart';
 import 'package:astro_hub/screens/landing.dart';
-import 'package:astro_hub/screens/search_results.dart';
-import 'package:astro_hub/screens/service_details.dart';
 import 'package:flutter/material.dart';
 import 'constants/image_paths.dart' as image_paths;
 
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-void main() async{
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

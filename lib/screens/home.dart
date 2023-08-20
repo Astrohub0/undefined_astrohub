@@ -1,15 +1,10 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/enums/craft_type.dart';
 import 'package:astro_hub/models/enums/shuttle_type.dart';
-import 'package:astro_hub/models/enums/trip_type.dart';
-import 'package:astro_hub/screens/book_round_trip.dart';
-import 'package:astro_hub/screens/landing.dart';
-import 'package:astro_hub/screens/search_departure.dart';
 import 'package:astro_hub/screens/search_results.dart';
 import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
 import 'package:astro_hub/widgets/features/departure_date.dart';
-import 'package:astro_hub/widgets/global/book_btn.dart';
 import 'package:astro_hub/widgets/global/common_number_input.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
