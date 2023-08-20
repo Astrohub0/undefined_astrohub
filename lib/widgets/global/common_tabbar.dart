@@ -91,7 +91,7 @@ class CommonTabbarState extends State<CommonTabbar> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SvgPicture.asset(widget.tab1img),
+                          //SvgPicture.asset(widget.tab1img),
                           const SizedBox(
                               width:
                                   4), // Add some spacing between icon and text
@@ -103,7 +103,7 @@ class CommonTabbarState extends State<CommonTabbar> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SvgPicture.asset(widget.tab2img),
+                          //SvgPicture.asset(widget.tab2img),
                           const SizedBox(
                               width:
                                   4), // Add some spacing between icon and text
@@ -115,7 +115,7 @@ class CommonTabbarState extends State<CommonTabbar> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SvgPicture.asset(widget.tab3img),
+                          //SvgPicture.asset(widget.tab3img),
                           const SizedBox(
                               width:
                                   4), // Add some spacing between icon and text

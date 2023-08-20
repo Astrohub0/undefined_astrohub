@@ -10,7 +10,7 @@ Widget popularDestination(
   imgUrl ??= 'assets/planet1.png';
   distance ??= '0.5 light years';
   return SizedBox(
-    width: width * 0.8,
+    width: width * 0.68,
     height: height * 0.23,
     child: Stack(
       alignment: Alignment.bottomCenter,

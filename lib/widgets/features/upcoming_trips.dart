@@ -3,10 +3,9 @@ import 'package:astro_hub/constants/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-Widget card2(
+Widget upcomingTrip(
   BuildContext context, {
   required String refNo,
-  required String tripType,
   required String from,
   required String to,
   required String iconUrl,

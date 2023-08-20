@@ -1,15 +1,18 @@
 import 'package:astro_hub/constants/styles.dart';
 import 'package:astro_hub/models/enums/craft_type.dart';
+import 'package:astro_hub/screens/search_results.dart';
+import 'package:astro_hub/utils/router.dart';
 import 'package:astro_hub/models/enums/cabin_type.dart';
 import 'package:astro_hub/widgets/features/departure.dart';
 import 'package:astro_hub/widgets/features/departure_date.dart';
-import 'package:astro_hub/widgets/global/book_btn.dart';
 import 'package:astro_hub/widgets/global/common_number_input.dart';
+import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({Key? key, required this.tripType}) : super(key: key);
+  final String tripType;
 
   @override
   HomeState createState() => HomeState();
@@ -80,14 +83,18 @@ class HomeState extends State<Home> {
                           style: TextStyles.subtopicText)),
                 ),
                 const DepartureDatePick(),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30.0),
-                  child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Arrival Date Range',
-                          style: TextStyles.subtopicText)),
-                ),
-                const DepartureDatePick(),
+                widget.tripType == 'Round Trip'
+                    ? Padding(
+                        padding: const EdgeInsets.only(left: 30.0),
+                        child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text('Arrival Date Range',
+                                style: TextStyles.subtopicText)),
+                      )
+                    : const SizedBox(),
+                widget.tripType == 'Round Trip'
+                    ? DepartureDatePick()
+                    : const SizedBox(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -268,9 +275,12 @@ class HomeState extends State<Home> {
                     numberInput(width * 0.25, height * 0.05, 'Passengers'),
                   ],
                 ),
+                const SizedBox(height: 20),
+                primaryButton(context, 'FIND CRAFTS', onPressed: () {
+                  PageNavigator(context: context).nextPage(const SearchResults());
+                })
               ]),
         ),
-        floatingActionButton: bookFlight(context),
       ),
     );
   }
