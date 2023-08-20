@@ -457,7 +457,41 @@ class HomeState extends State<Home> {
             ),
             const SizedBox(height: 20),
             primaryButton(context, 'FIND CRAFTS', onPressed: () {
-              PageNavigator(context: context).nextPage(SearchResults());
+              SpaceTravelInfo info = SpaceTravelInfo(
+                  fromPort: departureData["port"]!,
+                  toPort: arrivalData["port"]!,
+                  departureDates: depatureDates,
+                  arrivalDates: arrivalDates,
+                  selectedShuttleType: selectedCraftType.name!,
+                  selectedCabinType: selectedCabinType.name,
+                  // for craft if Cruise else shuttle create a new map
+                  craft: selectedCraftType == CraftType.Cruise
+                      ? {
+                          "craft_type": "Cruise",
+                          "total_business_seats": 12,
+                          "total_econ_seats": "5800.97 \$",
+                        }
+                      : {
+                          "craft_type": "Shuttle",
+                          "total_business_seats": "assets/images/shuttle.png",
+                          "total_econ_seats": 23
+                        },
+                spacecraftAttributes: {
+                    "is_cargo": false,
+                    "is_pets_allowed": false
+                },
+                availableBusinessSeats: 102,
+                availableEconSeats: 122,
+                ticketPrices: {
+                  "additional_luggage_per_kg": 30,
+                  "business_base_price": 8299.98,
+                  "economy_base_price": 5489.98,
+                },
+                spacecraftId: "FL-11313",
+                spaceline: "SpaceX",
+                totalDistance: 10012434,
+              );
+              PageNavigator(context: context).nextPage(SearchResults(info: info,));
             })
           ]),
         ),

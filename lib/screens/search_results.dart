@@ -10,8 +10,10 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class SearchResults extends StatefulWidget {
-  const SearchResults({Key? key}) : super(key: key);
-  //final SpaceTravelInfo info;
+
+  const SearchResults({Key? key, required this.info}) : super(key: key);
+
+  final SpaceTravelInfo info;
 
   @override
   SearchResultsState createState() => SearchResultsState();
