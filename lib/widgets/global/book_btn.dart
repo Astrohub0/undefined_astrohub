@@ -1,9 +1,11 @@
 import 'package:astro_hub/constants/styles.dart';
+import 'package:astro_hub/screens/flight_details.dart';
 import 'package:astro_hub/screens/no_available_crafts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../services/get_flights.dart';
+import '../../constants/icon_paths.dart' as icons;
 
 Widget bookFlight(context) {
   return FloatingActionButton(
@@ -14,10 +16,12 @@ Widget bookFlight(context) {
         // need to process context
         Future flights = getFlights();
         print(flights);
-        return const NoAvailableCrafts();
+        print(context);
+        //return const NoAvailableCrafts();
+        return FlightDetails();
       }));
     }),
     tooltip: 'Book a flight',
-    child: SvgPicture.asset('assets/icons/rocket.svg'),
+    child: SvgPicture.asset(icons.rocket),
   );
 }
