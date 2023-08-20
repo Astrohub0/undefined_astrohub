@@ -9,6 +9,7 @@ import 'package:astro_hub/widgets/features/departure_date.dart';
 import 'package:astro_hub/widgets/global/common_number_input.dart';
 import 'package:astro_hub/widgets/global/primary_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 
 class Home extends StatefulWidget {
@@ -24,6 +25,8 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   CraftType selectedCraftType = CraftType.Cruise; // Default selected type
   CabinType selectedCabinType = CabinType.Economy; // Default selected type
+  String promoCode = '';
+  int numberOfPassengers = 0;
 
   Map<String, String> departureData = {
     'imgUrl': '',
@@ -231,9 +234,10 @@ class HomeState extends State<Home> {
                           value: selectedCraftType.toString(),
                           onChanged: (String? value) {
                             if (value != null) {
-                              _onShuttleDropdownChanged(CraftType.values
-                                  .firstWhere(
-                                      (type) => type.toString() == value));
+                              setState(() {
+                                selectedCraftType = CraftType.values.firstWhere(
+                                    (type) => type.toString() == value);
+                              });
                             }
                           },
                           items: CraftType.values.map((CraftType value) {
@@ -310,58 +314,130 @@ class HomeState extends State<Home> {
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Promo Code',
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.6),
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
+            SizedBox(height: height * 0.02),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Promo Code',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.6),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 10),
-                    GlassmorphicContainer(
-                      width: width * 0.25,
-                      height: height * 0.05,
-                      borderRadius: 8.0,
-                      linearGradient: AppGradients.glassInputGradient,
-                      border: 0.5,
-                      blur: 50,
-                      borderGradient: const LinearGradient(
-                        begin: Alignment(0.59, 0.80),
-                        end: Alignment(-0.59, -0.8),
-                        colors: [
-                          Color.fromARGB(75, 255, 255, 255),
-                          Color.fromARGB(11, 255, 255, 255),
-                        ],
-                      ),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                      const SizedBox(height: 10),
+                      GlassmorphicContainer(
                         width: width * 0.25,
                         height: height * 0.05,
-                        child: TextField(
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.6),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
+                        borderRadius: 8.0,
+                        linearGradient: AppGradients.glassInputGradient,
+                        border: 0.5,
+                        blur: 50,
+                        borderGradient: const LinearGradient(
+                          begin: Alignment(0.59, 0.80),
+                          end: Alignment(-0.59, -0.8),
+                          colors: [
+                            Color.fromARGB(75, 255, 255, 255),
+                            Color.fromARGB(11, 255, 255, 255),
+                          ],
+                        ),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                          width: width * 0.25,
+                          height: height * 0.05,
+                          child: TextField(
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.6),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                            onChanged: (value) {
+                              setState(() {
+                                promoCode = value;
+                              });
+                            },
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: width * 0.06),
-                numberInput(width * 0.25, height * 0.05, 'Passengers'),
-              ],
+                    ],
+                  ),
+                  
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Passengers',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.6),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      GlassmorphicContainer(
+                        width: width * 0.25,
+                        height: height * 0.05,
+                        borderRadius: 8.0,
+                        linearGradient: AppGradients.glassInputGradient,
+                        border: 0.5,
+                        blur: 50,
+                        borderGradient: const LinearGradient(
+                          begin: Alignment(0.59, 0.80),
+                          end: Alignment(-0.59, -0.8),
+                          colors: [
+                            Color.fromARGB(75, 255, 255, 255),
+                            Color.fromARGB(11, 255, 255, 255),
+                          ],
+                        ),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                          width: width,
+                          height: height,
+                          child: TextField(
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.6),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            decoration: InputDecoration(
+                              hintText: "0",
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                color: Colors.white.withOpacity(0.6),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            onChanged: (String value) {
+                              // Change the parameter type to String
+                              // Convert the string value to an integer if needed
+                              int parsedValue = int.tryParse(value) ?? 0;
+                              setState(() {
+                                numberOfPassengers = parsedValue;
+                              });
+                            },
+                            keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              FilteringTextInputFormatter.digitsOnly
+                            ], // Only numbers can be entered
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
             primaryButton(context, 'FIND CRAFTS', onPressed: () {
