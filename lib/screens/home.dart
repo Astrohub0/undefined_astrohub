@@ -442,7 +442,7 @@ class HomeState extends State<Home> {
             ),
             const SizedBox(height: 20),
             primaryButton(context, 'FIND CRAFTS', onPressed: () {
-              PageNavigator(context: context).nextPage(const RecentTrips());
+              PageNavigator(context: context).nextPage(const SearchResults());
             })
           ]),
         ),
