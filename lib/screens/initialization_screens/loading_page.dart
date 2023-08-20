@@ -21,7 +21,7 @@ class LoadingSpinner extends StatelessWidget {
                 ]
             )
         ),
-        child: Center(
+        child: const Center(
           child: SpinKitChasingDots(
             color: Colors.white,
             size: 80,

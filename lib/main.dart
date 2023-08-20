@@ -1,13 +1,17 @@
 import 'package:astro_hub/constants/styles.dart';
-import 'package:astro_hub/models/enums/craftType.dart';
-import 'package:astro_hub/screens/initialization_screens/home.dart';
-import 'package:astro_hub/screens/test.dart';
-import 'package:astro_hub/widgets/global/book_btn.dart';
-import 'package:astro_hub/widgets/global/common_app_bar.dart';
+import 'package:astro_hub/screens/landing.dart';
 import 'package:flutter/material.dart';
-import 'package:glassmorphism/glassmorphism.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+import 'firebase_options.dart';
+import 'constants/image_paths.dart' as image_paths;
+import 'package:astro_hub/screens/test.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -19,18 +23,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'AstroHub',
+      title: 'Astrohub',
       theme: ThemeData(
-        // primaryColor: const Color.fromARGB(142, 233, 30, 98),
-        // canvasColor: Color.fromARGB(255, 30, 233, 142),
-        // cardColor: Color.fromARGB(255, 0, 166, 255),
-        // dialogBackgroundColor: Color.fromARGB(142, 255, 200, 0),
-        scaffoldBackgroundColor: Colors.transparent,
+        // 0xFF4CFF5E
+        scaffoldBackgroundColor: Color(
+          0xFF03132C,
+        ),
         appBarTheme: const AppBarTheme(
           color: Colors.transparent,
         ),
         fontFamily: 'SairaSemiCondensed',
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primarySolid01),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: AppColors.primarySolid01,
+            surfaceVariant: Colors.transparent),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -50,27 +55,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return const Stack(
       children: [
         Positioned.fill(
           //
           child: Image(
-            image: AssetImage("assets/images/bg.png"),
+            image: AssetImage(image_paths.bgImage),
             fit: BoxFit.fill,
             width: double.infinity,
           ),
         ),
-        Test(),
-        // Container(
-        //     constraints: BoxConstraints.expand(),
-        //     width: double.infinity,
-        //     decoration: const BoxDecoration(
-        //       image: DecorationImage(
-        //         image: AssetImage("assets/images/bg.png"),
-        //         fit: BoxFit.cover,
-        //       ),
-        //     ),
-        //     child: Home()),
+        Landing(),
       ],
     );
   }
